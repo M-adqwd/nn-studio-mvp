@@ -1,0 +1,492 @@
+{
+  "upload": {
+    "parsing": true,
+    "task_id": "pt_65e09c676f0d",
+    "dataset_id": "ds_1d508eab28",
+    "name": "MITBIH-心搏四分类-DAY0",
+    "message": "文件已接收，AI 正在解析…",
+    "upload_seconds": 1.2
+  },
+  "parse": {
+    "id": "pt_65e09c676f0d",
+    "status": "done",
+    "created_at": 1793338671.788722,
+    "dataset_id": "ds_1d508eab28",
+    "name": "MITBIH-心搏四分类-DAY0",
+    "message": "解析完成",
+    "progress": 1.0,
+    "stage": "ai_exec",
+    "round_no": 1,
+    "max_rounds": 5,
+    "files_done": 0,
+    "files_total": 0,
+    "report": {
+      "fingerprint": "L1-1|E<name>.table:1.0|Cx0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39#188",
+      "memory_hit": true,
+      "memory_score": 1.0,
+      "memory_source": "Maternal Health Risk Data Set",
+      "ai_called": false,
+      "ai_fix_calls": 0,
+      "ai_reason": "",
+      "structure": "单个表格文件 _upload_ds_1d508eab28.csv：188 列（x0, x1, x2, x3, x4, x5, x6, x7, x8, x9）",
+      "entries": 1,
+      "extract_seconds": 2.01,
+      "memory_id": "pm_2f193d62523d",
+      "no_native_val_test": true,
+      "split_source": "ai_product",
+      "split_consistency": {
+        "checked": false,
+        "consistent": true,
+        "mismatched": 0,
+        "total": 0
+      },
+      "seconds": 67.57,
+      "attempts": 1,
+      "split_counts": {
+        "train": 100633,
+        "val": 0,
+        "test": 0
+      },
+      "task": "tabular_classification",
+      "target_col": "label"
+    },
+    "parse_seconds": 69.8
+  },
+  "dataset": {},
+  "train": {
+    "id": "job_f374e47bdd",
+    "dataset_id": "ds_1d508eab28",
+    "status": "done",
+    "progress": 1.0,
+    "epoch": 3,
+    "total_epochs": 3,
+    "model_path": "E:\\workbuddy\\nn-studio-mvp\\backend\\storage\\models\\job_f374e47bdd.pkl",
+    "error": null,
+    "created_at": "2026-10-30 13:39:01",
+    "updated_at": "2026-10-30 13:39:58",
+    "config": {
+      "task": "classification",
+      "epochs": 5,
+      "batch_size": 128,
+      "auto": true,
+      "val_split": 0.2,
+      "transfer": true,
+      "lr": 0.001
+    },
+    "logs": [
+      "智能体接管：开始数据体检…",
+      "数据卡：100633 条样本 · 4 · 划分 {'train': 100633}",
+      "数据划分：数据集未自带验证集，已从训练集切出一份用于早停 —— 训练 80507 · 验证 20126",
+      "特征矩阵：100633 行 × 187 列（数值 187 · 类别 0）",
+      "第 1/3 轮方案：hgb · 梯度提升树 · 样本 100633 条",
+      "  hgb 训练完成 13.3s · val_acc 0.98768",
+      "第 2/3 轮方案：hgb · 加深加长，学习率减半",
+      "  hgb 训练完成 15.6s · val_acc 0.98723",
+      "第 3/3 轮方案：hgb · 更大容量 + 更强正则",
+      "  hgb 训练完成 27.2s · val_acc 0.98718",
+      "自动建模完成：共 3 轮，采用第 1 轮（hgb），模型已保存：job_f374e47bdd.pkl"
+    ],
+    "metrics": {
+      "history": [
+        {
+          "epoch": 1,
+          "val_acc": 0.98768,
+          "val_rmse": null,
+          "round_epoch": 1
+        },
+        {
+          "epoch": 2,
+          "val_acc": 0.98723,
+          "val_rmse": null,
+          "round_epoch": 1
+        },
+        {
+          "epoch": 3,
+          "val_acc": 0.98718,
+          "val_rmse": null,
+          "round_epoch": 1
+        }
+      ],
+      "task": "classification",
+      "arch": "hgb",
+      "best_val": {
+        "epoch": 1,
+        "val_acc": 0.98768,
+        "acc": 0.98768,
+        "macro_f1": 0.90052,
+        "per_class": [
+          {
+            "class": 0,
+            "support": 171,
+            "precision": 0.8898,
+            "recall": 0.6608,
+            "f1": 0.7584
+          },
+          {
+            "class": 1,
+            "support": 18044,
+            "precision": 0.9898,
+            "recall": 0.9983,
+            "f1": 0.994
+          },
+          {
+            "class": 2,
+            "support": 537,
+            "precision": 0.9732,
+            "recall": 0.8101,
+            "f1": 0.8841
+          },
+          {
+            "class": 3,
+            "support": 1374,
+            "precision": 0.9734,
+            "recall": 0.9578,
+            "f1": 0.9655
+          }
+        ],
+        "confusion_matrix": [
+          [
+            113,
+            44,
+            0,
+            14
+          ],
+          [
+            3,
+            18014,
+            11,
+            16
+          ],
+          [
+            0,
+            96,
+            435,
+            6
+          ],
+          [
+            11,
+            46,
+            1,
+            1316
+          ]
+        ]
+      },
+      "test_metrics": {},
+      "config": {
+        "model": "hgb",
+        "max_iter": 300,
+        "learning_rate": 0.08,
+        "max_leaf_nodes": 31,
+        "l2_regularization": 1.0,
+        "early_stopping": true,
+        "reason": "梯度提升树 · 样本 100633 条"
+      },
+      "datacard": {
+        "rows": 100633,
+        "task_hint": "tabular_classification",
+        "splits": {
+          "train": 100633
+        },
+        "n_classes": 4,
+        "class_counts": {
+          "N": 90045,
+          "V": 7006,
+          "S": 2780,
+          "F": 802
+        },
+        "min_class": 802,
+        "max_class": 90045,
+        "imbalance": 112.28
+      },
+      "advice": {
+        "level": "ok",
+        "summary": "准确率 98.77%，效果良好。",
+        "plain_summary": "准确率 98.8%，在你的数据上判断得很准。",
+        "plain_tips": []
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "plan": {
+            "model": "hgb",
+            "max_iter": 300,
+            "learning_rate": 0.08,
+            "max_leaf_nodes": 31,
+            "l2_regularization": 1.0,
+            "early_stopping": true,
+            "reason": "梯度提升树 · 样本 100633 条"
+          },
+          "val": {
+            "acc": 0.98768,
+            "macro_f1": 0.90052,
+            "per_class": [
+              {
+                "class": 0,
+                "support": 171,
+                "precision": 0.8898,
+                "recall": 0.6608,
+                "f1": 0.7584
+              },
+              {
+                "class": 1,
+                "support": 18044,
+                "precision": 0.9898,
+                "recall": 0.9983,
+                "f1": 0.994
+              },
+              {
+                "class": 2,
+                "support": 537,
+                "precision": 0.9732,
+                "recall": 0.8101,
+                "f1": 0.8841
+              },
+              {
+                "class": 3,
+                "support": 1374,
+                "precision": 0.9734,
+                "recall": 0.9578,
+                "f1": 0.9655
+              }
+            ],
+            "confusion_matrix": [
+              [
+                113,
+                44,
+                0,
+                14
+              ],
+              [
+                3,
+                18014,
+                11,
+                16
+              ],
+              [
+                0,
+                96,
+                435,
+                6
+              ],
+              [
+                11,
+                46,
+                1,
+                1316
+              ]
+            ]
+          },
+          "test": null,
+          "history": [
+            {
+              "epoch": 1,
+              "val_acc": 0.98768,
+              "val_rmse": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "plan": {
+            "model": "hgb",
+            "max_iter": 600,
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "l2_regularization": 0.5,
+            "early_stopping": true,
+            "reason": "加深加长，学习率减半"
+          },
+          "val": {
+            "acc": 0.98723,
+            "macro_f1": 0.89879,
+            "per_class": [
+              {
+                "class": 0,
+                "support": 171,
+                "precision": 0.8906,
+                "recall": 0.6667,
+                "f1": 0.7625
+              },
+              {
+                "class": 1,
+                "support": 18044,
+                "precision": 0.9894,
+                "recall": 0.9984,
+                "f1": 0.9939
+              },
+              {
+                "class": 2,
+                "support": 537,
+                "precision": 0.9838,
+                "recall": 0.7896,
+                "f1": 0.876
+              },
+              {
+                "class": 3,
+                "support": 1374,
+                "precision": 0.9683,
+                "recall": 0.9571,
+                "f1": 0.9627
+              }
+            ],
+            "confusion_matrix": [
+              [
+                114,
+                40,
+                0,
+                17
+              ],
+              [
+                3,
+                18016,
+                6,
+                19
+              ],
+              [
+                0,
+                106,
+                424,
+                7
+              ],
+              [
+                11,
+                47,
+                1,
+                1315
+              ]
+            ]
+          },
+          "test": null,
+          "history": [
+            {
+              "epoch": 1,
+              "val_acc": 0.98723,
+              "val_rmse": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "plan": {
+            "model": "hgb",
+            "max_iter": 900,
+            "learning_rate": 0.03,
+            "max_leaf_nodes": 127,
+            "l2_regularization": 0.1,
+            "early_stopping": true,
+            "reason": "更大容量 + 更强正则"
+          },
+          "val": {
+            "acc": 0.98718,
+            "macro_f1": 0.89866,
+            "per_class": [
+              {
+                "class": 0,
+                "support": 171,
+                "precision": 0.9098,
+                "recall": 0.6491,
+                "f1": 0.7577
+              },
+              {
+                "class": 1,
+                "support": 18044,
+                "precision": 0.9889,
+                "recall": 0.9988,
+                "f1": 0.9938
+              },
+              {
+                "class": 2,
+                "support": 537,
+                "precision": 0.9839,
+                "recall": 0.7989,
+                "f1": 0.8818
+              },
+              {
+                "class": 3,
+                "support": 1374,
+                "precision": 0.9724,
+                "recall": 0.9505,
+                "f1": 0.9614
+              }
+            ],
+            "confusion_matrix": [
+              [
+                111,
+                44,
+                0,
+                16
+              ],
+              [
+                2,
+                18022,
+                4,
+                16
+              ],
+              [
+                0,
+                103,
+                429,
+                5
+              ],
+              [
+                9,
+                56,
+                3,
+                1306
+              ]
+            ]
+          },
+          "test": null,
+          "history": [
+            {
+              "epoch": 1,
+              "val_acc": 0.98718,
+              "val_rmse": null
+            }
+          ]
+        }
+      ],
+      "split_info": {
+        "source": "dataset_split",
+        "note": "数据集未自带验证集，已从训练集切出一份用于早停",
+        "train": 80507,
+        "val": 20126,
+        "test": 0
+      }
+    },
+    "dataset_name": "MITBIH-心搏四分类-DAY0",
+    "task_hint": "tabular_classification",
+    "train_seconds": 58.0
+  },
+  "predict": {
+    "predictions": [
+      {
+        "label": "N",
+        "confidence": 1.0
+      },
+      {
+        "label": "F",
+        "confidence": 1.0
+      },
+      {
+        "label": "N",
+        "confidence": 1.0
+      },
+      {
+        "label": "N",
+        "confidence": 1.0
+      },
+      {
+        "label": "N",
+        "confidence": 1.0
+      }
+    ],
+    "truth": [
+      "N",
+      "F",
+      "N",
+      "N",
+      "N"
+    ]
+  }
+}

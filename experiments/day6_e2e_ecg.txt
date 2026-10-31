@@ -1,0 +1,10 @@
+      结论: 心电信号自动分类：MI，置信度 57.94%。
+      印象: AI 提示：MI，请结合临床与影像复核。
+[4/5] 回读报告，核对证据链
+      state=draft refs=[{'kind': 'ai_job', 'uid': 'cls-987b6b1e270b', 'version': 1}]
+      草稿态：True · 引用 AI 任务：True
+[5/5] 核对 AI 任务留痕
+      job=cls-987b6b1e270b status=done model=PTBXL-12导联多标签-信号路径 v1
+      top={'label': 'MI', 'labels': ['MI'], 'confidence': 0.5794, 'top_label': 'STTC', 'probabilities': {'CD': 0.3632, 'HYP': 0.0846, 'MI': 0.5794, 'NORM': 0.2359, 'STTC': 0.6209}} disclaimer=有
+
+结论： 打通成功（报告为 draft，等医师复核）

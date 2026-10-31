@@ -1,0 +1,279 @@
+{
+  "id": "job_48a0676136",
+  "dataset_id": "ds_cb4e4c9acb",
+  "status": "done",
+  "progress": 1.0,
+  "epoch": 10,
+  "total_epochs": 20,
+  "model_path": "E:\\workbuddy\\nn-studio-mvp\\backend\\storage\\models\\job_48a0676136.pt",
+  "error": null,
+  "created_at": "2026-10-30 18:56:23",
+  "updated_at": "2026-10-30 19:10:07",
+  "config": {
+    "transfer": true,
+    "epochs": 20
+  },
+  "logs": [
+    "信号形态：single · 1 导联 × 187 采样点 · 100633 条记录",
+    "标签：单标签 · 4 类",
+    "数据划分：数据集未自带验证集，已从训练集切出一份用于早停；数据集未自带测试集，已从训练集切出 14161 条作为独立测试集（训练与早停全程不可见） —— 训练 59055 · 验证 27417 · 测试 14161（不参与训练）",
+    "  epoch 01 loss 0.4172 · f1 0.3740",
+    "  epoch 02 loss 0.2681 · f1 0.3254",
+    "  epoch 03 loss 0.2433 · f1 0.3645",
+    "  epoch 04 loss 0.1984 · f1 0.5079",
+    "  epoch 05 loss 0.159 · f1 0.4663",
+    "  epoch 06 loss 0.1131 · f1 0.4390",
+    "  epoch 07 loss 0.0881 · f1 0.4516",
+    "  epoch 08 loss 0.0671 · f1 0.3947",
+    "  epoch 09 loss 0.0386 · f1 0.3982",
+    "  epoch 10 loss 0.0323 · f1 0.4467",
+    "  验证指标 6 轮无提升，提前停止（最佳 epoch 4）",
+    "测试集：acc 0.80644 · macro-F1 0.46687 · QWK 0.66514 · 样本 14161",
+    "信号模型已保存：job_48a0676136.pt"
+  ],
+  "metrics": {
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.4172,
+        "val_loss": null,
+        "val_acc": 0.79907,
+        "val_f1": 0.374,
+        "val_auc": null
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.2681,
+        "val_loss": null,
+        "val_acc": 0.69063,
+        "val_f1": 0.32544,
+        "val_auc": null
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.2433,
+        "val_loss": null,
+        "val_acc": 0.76719,
+        "val_f1": 0.36453,
+        "val_auc": null
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.1984,
+        "val_loss": null,
+        "val_acc": 0.91848,
+        "val_f1": 0.50786,
+        "val_auc": null
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.159,
+        "val_loss": null,
+        "val_acc": 0.86866,
+        "val_f1": 0.46633,
+        "val_auc": null
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.1131,
+        "val_loss": null,
+        "val_acc": 0.87154,
+        "val_f1": 0.43898,
+        "val_auc": null
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.0881,
+        "val_loss": null,
+        "val_acc": 0.878,
+        "val_f1": 0.45158,
+        "val_auc": null
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.0671,
+        "val_loss": null,
+        "val_acc": 0.80093,
+        "val_f1": 0.39472,
+        "val_auc": null
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.0386,
+        "val_loss": null,
+        "val_acc": 0.79203,
+        "val_f1": 0.39825,
+        "val_auc": null
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.0323,
+        "val_loss": null,
+        "val_acc": 0.84666,
+        "val_f1": 0.44673,
+        "val_auc": null
+      }
+    ],
+    "task": "classification",
+    "arch": "cnn1d",
+    "best_val": {
+      "epoch": 4,
+      "acc": 0.91848,
+      "val_acc": 0.91848,
+      "macro_f1": 0.50786,
+      "qwk": 0.6869,
+      "macro_auc": null,
+      "per_class": [
+        {
+          "class": "F",
+          "class_index": 0,
+          "support": 18,
+          "precision": 0.0036,
+          "recall": 0.0556,
+          "f1": 0.0067
+        },
+        {
+          "class": "N",
+          "class_index": 1,
+          "support": 25825,
+          "precision": 0.9921,
+          "recall": 0.9238,
+          "f1": 0.9567
+        },
+        {
+          "class": "S",
+          "class_index": 2,
+          "support": 409,
+          "precision": 0.1701,
+          "recall": 0.6748,
+          "f1": 0.2717
+        },
+        {
+          "class": "V",
+          "class_index": 3,
+          "support": 1165,
+          "precision": 0.7144,
+          "recall": 0.8996,
+          "f1": 0.7964
+        }
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          16,
+          0,
+          1
+        ],
+        [
+          261,
+          23857,
+          1318,
+          389
+        ],
+        [
+          2,
+          102,
+          276,
+          29
+        ],
+        [
+          16,
+          72,
+          29,
+          1048
+        ]
+      ]
+    },
+    "test_metrics": {
+      "acc": 0.80644,
+      "macro_f1": 0.46687,
+      "qwk": 0.66514,
+      "per_class": [
+        {
+          "class": "F",
+          "class_index": 0,
+          "support": 748,
+          "precision": 0.0026,
+          "recall": 0.0027,
+          "f1": 0.0027
+        },
+        {
+          "class": "N",
+          "class_index": 1,
+          "support": 10863,
+          "precision": 0.9408,
+          "recall": 0.837,
+          "f1": 0.8859
+        },
+        {
+          "class": "S",
+          "class_index": 2,
+          "support": 209,
+          "precision": 0.1299,
+          "recall": 0.2679,
+          "f1": 0.175
+        },
+        {
+          "class": "V",
+          "class_index": 3,
+          "support": 2341,
+          "precision": 0.6866,
+          "recall": 0.9697,
+          "f1": 0.804
+        }
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          487,
+          17,
+          242
+        ],
+        [
+          739,
+          9092,
+          347,
+          685
+        ],
+        [
+          3,
+          41,
+          56,
+          109
+        ],
+        [
+          16,
+          44,
+          11,
+          2270
+        ]
+      ]
+    },
+    "config": {
+      "epochs": 20,
+      "batch_size": 64,
+      "lr": 0.001,
+      "best_epoch": 4
+    },
+    "split_info": {
+      "source": "dataset_split",
+      "note": "数据集未自带验证集，已从训练集切出一份用于早停；数据集未自带测试集，已从训练集切出 14161 条作为独立测试集（训练与早停全程不可见）",
+      "train": 59055,
+      "val": 27417,
+      "test": 14161,
+      "group_col": "patient"
+    },
+    "advice": {
+      "summary": "信号模型训练完成",
+      "tips": [
+        "宏 F1 偏低，检查是否为类别严重不平衡，或采样率/导联数与训练数据不一致"
+      ],
+      "plain_tips": [
+        "二次加权 kappa 0.6869，反映分级判断与真实等级的接近程度"
+      ]
+    }
+  },
+  "dataset_name": "MITBIH-心搏四分类-信号路径-DAY5",
+  "task_hint": "signal_classification",
+  "seconds": 824.6
+}

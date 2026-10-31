@@ -1,0 +1,300 @@
+{
+  "id": "job_5357d331fa",
+  "dataset_id": "ds_38423c076a",
+  "status": "done",
+  "progress": 1.0,
+  "epoch": 15,
+  "total_epochs": 20,
+  "model_path": "E:\\workbuddy\\nn-studio-mvp\\backend\\storage\\models\\job_5357d331fa.pt",
+  "error": null,
+  "created_at": "2026-10-30 18:42:46",
+  "updated_at": "2026-10-30 18:48:05",
+  "config": {
+    "transfer": true,
+    "epochs": 20
+  },
+  "logs": [
+    "信号形态：multi · 12 导联 × 1000 采样点 · 8000 条记录",
+    "标签：多标签 · 5 类 · 平均每例 1.29 个诊断码",
+    "数据划分：沿用数据集自带的 train/val/test 划分 —— 训练 6403 · 验证 798 · 测试 799（不参与训练）",
+    "  epoch 01 loss 0.8943 · auc 0.8257",
+    "  epoch 02 loss 0.6911 · auc 0.8679",
+    "  epoch 03 loss 0.6297 · auc 0.8783",
+    "  epoch 04 loss 0.6029 · auc 0.8788",
+    "  epoch 05 loss 0.5823 · auc 0.8831",
+    "  epoch 06 loss 0.557 · auc 0.8874",
+    "  epoch 07 loss 0.5378 · auc 0.8864",
+    "  epoch 08 loss 0.5189 · auc 0.8939",
+    "  epoch 09 loss 0.497 · auc 0.8969",
+    "  epoch 10 loss 0.4734 · auc 0.8898",
+    "  epoch 11 loss 0.4444 · auc 0.8908",
+    "  epoch 12 loss 0.4241 · auc 0.8955",
+    "  epoch 13 loss 0.3798 · auc 0.8894",
+    "  epoch 14 loss 0.3353 · auc 0.8893",
+    "  epoch 15 loss 0.2961 · auc 0.8850",
+    "  验证指标 6 轮无提升，提前停止（最佳 epoch 9）",
+    "逐类阈值（验证集标定）：CD=0.60, HYP=0.60, MI=0.45, NORM=0.75, STTC=0.70",
+    "测试集：macro-AUC 0.88085 · macro-F1 0.67658 · 样本 799",
+    "信号模型已保存：job_5357d331fa.pt"
+  ],
+  "metrics": {
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.8943,
+        "val_loss": null,
+        "val_acc": 0.36717,
+        "val_f1": 0.58829,
+        "val_auc": 0.82568
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.6911,
+        "val_loss": null,
+        "val_acc": 0.43734,
+        "val_f1": 0.62898,
+        "val_auc": 0.86795
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.6297,
+        "val_loss": null,
+        "val_acc": 0.46742,
+        "val_f1": 0.65056,
+        "val_auc": 0.87829
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.6029,
+        "val_loss": null,
+        "val_acc": 0.29073,
+        "val_f1": 0.60227,
+        "val_auc": 0.87883
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.5823,
+        "val_loss": null,
+        "val_acc": 0.47995,
+        "val_f1": 0.65617,
+        "val_auc": 0.88313
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.557,
+        "val_loss": null,
+        "val_acc": 0.44236,
+        "val_f1": 0.67425,
+        "val_auc": 0.88743
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.5378,
+        "val_loss": null,
+        "val_acc": 0.3797,
+        "val_f1": 0.63423,
+        "val_auc": 0.88642
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.5189,
+        "val_loss": null,
+        "val_acc": 0.30326,
+        "val_f1": 0.64145,
+        "val_auc": 0.89388
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.497,
+        "val_loss": null,
+        "val_acc": 0.52256,
+        "val_f1": 0.68608,
+        "val_auc": 0.89689
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.4734,
+        "val_loss": null,
+        "val_acc": 0.52005,
+        "val_f1": 0.68685,
+        "val_auc": 0.88983
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.4444,
+        "val_loss": null,
+        "val_acc": 0.33083,
+        "val_f1": 0.65185,
+        "val_auc": 0.89077
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.4241,
+        "val_loss": null,
+        "val_acc": 0.33835,
+        "val_f1": 0.62787,
+        "val_auc": 0.89551
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.3798,
+        "val_loss": null,
+        "val_acc": 0.4411,
+        "val_f1": 0.67216,
+        "val_auc": 0.8894
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.3353,
+        "val_loss": null,
+        "val_acc": 0.46241,
+        "val_f1": 0.66693,
+        "val_auc": 0.88931
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.2961,
+        "val_loss": null,
+        "val_acc": 0.52256,
+        "val_f1": 0.67674,
+        "val_auc": 0.88501
+      }
+    ],
+    "task": "classification",
+    "arch": "cnn1d",
+    "best_val": {
+      "epoch": 9,
+      "acc": 0.55514,
+      "val_acc": 0.55514,
+      "macro_f1": 0.69993,
+      "qwk": null,
+      "macro_auc": 0.89689,
+      "per_class": [
+        {
+          "class": "CD",
+          "support": 193,
+          "precision": 0.7604,
+          "recall": 0.7565,
+          "f1": 0.7584,
+          "auc": 0.9268,
+          "threshold": 0.6
+        },
+        {
+          "class": "HYP",
+          "support": 92,
+          "precision": 0.5072,
+          "recall": 0.3804,
+          "f1": 0.4348,
+          "auc": 0.7931,
+          "threshold": 0.6
+        },
+        {
+          "class": "MI",
+          "support": 205,
+          "precision": 0.668,
+          "recall": 0.8341,
+          "f1": 0.7419,
+          "auc": 0.9171,
+          "threshold": 0.45
+        },
+        {
+          "class": "NORM",
+          "support": 353,
+          "precision": 0.8253,
+          "recall": 0.8697,
+          "f1": 0.8469,
+          "auc": 0.9255,
+          "threshold": 0.75
+        },
+        {
+          "class": "STTC",
+          "support": 189,
+          "precision": 0.7158,
+          "recall": 0.7196,
+          "f1": 0.7177,
+          "auc": 0.9221,
+          "threshold": 0.7
+        }
+      ],
+      "confusion_matrix": null
+    },
+    "test_metrics": {
+      "macro_auc": 0.88085,
+      "macro_f1": 0.67658,
+      "micro_f1": 0.7259,
+      "per_class": [
+        {
+          "class": "CD",
+          "support": 195,
+          "precision": 0.7421,
+          "recall": 0.7231,
+          "f1": 0.7325,
+          "auc": 0.9129,
+          "threshold": 0.6
+        },
+        {
+          "class": "HYP",
+          "support": 96,
+          "precision": 0.5139,
+          "recall": 0.3854,
+          "f1": 0.4405,
+          "auc": 0.7735,
+          "threshold": 0.6
+        },
+        {
+          "class": "MI",
+          "support": 199,
+          "precision": 0.5939,
+          "recall": 0.7789,
+          "f1": 0.6739,
+          "auc": 0.881,
+          "threshold": 0.45
+        },
+        {
+          "class": "NORM",
+          "support": 355,
+          "precision": 0.8085,
+          "recall": 0.8563,
+          "f1": 0.8317,
+          "auc": 0.9271,
+          "threshold": 0.75
+        },
+        {
+          "class": "STTC",
+          "support": 188,
+          "precision": 0.712,
+          "recall": 0.6968,
+          "f1": 0.7043,
+          "auc": 0.9096,
+          "threshold": 0.7
+        }
+      ],
+      "exact_match": 0.52315,
+      "acc": 0.52315
+    },
+    "config": {
+      "epochs": 20,
+      "batch_size": 64,
+      "lr": 0.001,
+      "best_epoch": 9
+    },
+    "split_info": {
+      "source": "dataset_split",
+      "note": "沿用数据集自带的 train/val/test 划分",
+      "train": 6403,
+      "val": 798,
+      "test": 799,
+      "group_col": null
+    },
+    "advice": {
+      "summary": "信号模型训练完成",
+      "tips": [],
+      "plain_tips": [
+        "已按类分别设定判定阈值，稀有类不会因为阈值过高被整体漏掉"
+      ]
+    }
+  },
+  "dataset_name": "PTBXL-12导联多标签-DAY4",
+  "task_hint": "signal_classification",
+  "seconds": 320.1
+}

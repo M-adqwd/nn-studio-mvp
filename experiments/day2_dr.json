@@ -1,0 +1,941 @@
+{
+  "upload": {
+    "parsing": true,
+    "task_id": "pt_9b18cf6f9053",
+    "dataset_id": "ds_b766770080",
+    "name": "眼底DR五级-DAY2",
+    "message": "文件已接收，AI 正在解析…",
+    "upload_seconds": 3.3
+  },
+  "parse": {
+    "id": "pt_9b18cf6f9053",
+    "status": "done",
+    "created_at": 1793354756.1719155,
+    "dataset_id": "ds_b766770080",
+    "name": "眼底DR五级-DAY2",
+    "message": "解析完成",
+    "progress": 1.0,
+    "stage": "ai_exec",
+    "files_done": 0,
+    "files_total": 0,
+    "elapsed": 11,
+    "eta_seconds": 0,
+    "round_no": 1,
+    "max_rounds": 5,
+    "report": {
+      "fingerprint": "L1-1|E<name>.img:0.627,<n>.img:0.372",
+      "memory_hit": true,
+      "memory_score": 1.0,
+      "memory_source": "眼底DR五级-DAY2",
+      "ai_called": false,
+      "ai_fix_calls": 0,
+      "ai_reason": "",
+      "structure": "共 2750 个文件；顶层目录：train(1924)、test(413)、val(413)；类型分布：.png×2750；疑似划分目录：test",
+      "entries": 2750,
+      "extract_seconds": 12.36,
+      "memory_id": "pm_c5a179db0e2e",
+      "split_source": "source_path",
+      "seconds": 47.36,
+      "attempts": 1,
+      "split_counts": {
+        "train": 1924,
+        "val": 413,
+        "test": 413
+      },
+      "task": "image_classification",
+      "target_col": "label"
+    },
+    "parse_seconds": 49.9
+  },
+  "dataset": {},
+  "train": {
+    "id": "job_11f77f7d13",
+    "dataset_id": "ds_b766770080",
+    "status": "done",
+    "progress": 1.0,
+    "epoch": 8,
+    "total_epochs": 8,
+    "model_path": "E:\\workbuddy\\nn-studio-mvp\\backend\\storage\\models\\job_11f77f7d13.pt",
+    "error": null,
+    "created_at": "2026-10-30 18:06:46",
+    "updated_at": "2026-10-30 18:25:17",
+    "config": {
+      "task": "classification",
+      "epochs": 8,
+      "batch_size": 32,
+      "auto": true,
+      "val_split": 0.2,
+      "transfer": true,
+      "lr": 0.003
+    },
+    "logs": [
+      "智能体接管：开始数据体检…",
+      "数据卡：2750 条样本 · 5 个类别 · 划分 {'train': 1924, 'test': 413, 'val': 413}",
+      "数据划分：沿用数据集自带的 train/val/test 划分 —— 训练 1924 · 验证 413 · 测试 413（不参与训练）",
+      "已校验：413 个测试集样本与训练/验证集零交集",
+      "第 1/2 轮方案：mobilenet_v3_small · 输入 224px · 增强 medium×2 · 8 轮 · 微调主干网络 · 样本 2750 条 · 类别 5 个 · 最大/最小类比 5.26",
+      "epoch 1/8 · loss 1.3557 · val_loss 1.1235 · val_acc 0.6368",
+      "epoch 2/8 · loss 1.2564 · val_loss 1.1268 · val_acc 0.6174",
+      "epoch 3/8 · loss 1.2175 · val_loss 1.0983 · val_acc 0.6489",
+      "epoch 4/8 · loss 1.1841 · val_loss 1.0755 · val_acc 0.6634",
+      "epoch 5/8 · loss 1.1735 · val_loss 1.1356 · val_acc 0.6174",
+      "epoch 6/8 · loss 1.1390 · val_loss 1.1237 · val_acc 0.6053",
+      "epoch 7/8 · loss 1.1390 · val_loss 1.1160 · val_acc 0.6465",
+      "epoch 8/8 · loss 1.1273 · val_loss 1.0905 · val_acc 0.6610",
+      "已回滚至第 4 轮最佳权重",
+      "测试集评估（全程未参与训练）：acc 0.72397 · macro_f1 0.62323",
+      "诊断：plateau —— 调整方案后重训",
+      "第 2/2 轮方案：resnet18 · 输入 256px · 增强 medium×4 · 8 轮 · 微调主干网络 · AI 不可用，按诊断（plateau）自动调整（第 1 次调整）",
+      "epoch 1/8 · loss 1.3595 · val_loss 1.5140 · val_acc 0.4673",
+      "epoch 2/8 · loss 1.2394 · val_loss 1.8386 · val_acc 0.3002",
+      "epoch 3/8 · loss 1.2295 · val_loss 1.5367 · val_acc 0.3123",
+      "epoch 4/8 · loss 1.2063 · val_loss 1.1864 · val_acc 0.5109",
+      "epoch 5/8 · loss 1.1674 · val_loss 1.1832 · val_acc 0.5860",
+      "epoch 6/8 · loss 1.1164 · val_loss 1.0912 · val_acc 0.6804",
+      "epoch 7/8 · loss 1.0900 · val_loss 1.0589 · val_acc 0.6295",
+      "epoch 8/8 · loss 1.0844 · val_loss 1.0451 · val_acc 0.6852",
+      "测试集评估（全程未参与训练）：acc 0.72881 · macro_f1 0.65199",
+      "自动建模完成：共 2 轮，采用第 2 轮方案（resnet18 · 256px · 微调主干），模型已保存：job_11f77f7d13.pt"
+    ],
+    "metrics": {
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.35569,
+          "train_acc": 0.53616,
+          "val_loss": 1.12352,
+          "val_acc": 0.6368,
+          "round_epoch": 1
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.25644,
+          "train_acc": 0.57125,
+          "val_loss": 1.12679,
+          "val_acc": 0.61743,
+          "round_epoch": 2
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.21749,
+          "train_acc": 0.5935,
+          "val_loss": 1.09832,
+          "val_acc": 0.64891,
+          "round_epoch": 3
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.18409,
+          "train_acc": 0.60933,
+          "val_loss": 1.0755,
+          "val_acc": 0.66344,
+          "round_epoch": 4
+        },
+        {
+          "epoch": 5,
+          "train_loss": 1.17353,
+          "train_acc": 0.61789,
+          "val_loss": 1.13564,
+          "val_acc": 0.61743,
+          "round_epoch": 5
+        },
+        {
+          "epoch": 6,
+          "train_loss": 1.13904,
+          "train_acc": 0.6119,
+          "val_loss": 1.12371,
+          "val_acc": 0.60533,
+          "round_epoch": 6
+        },
+        {
+          "epoch": 7,
+          "train_loss": 1.13902,
+          "train_acc": 0.63885,
+          "val_loss": 1.11596,
+          "val_acc": 0.64649,
+          "round_epoch": 7
+        },
+        {
+          "epoch": 8,
+          "train_loss": 1.12731,
+          "train_acc": 0.63671,
+          "val_loss": 1.09052,
+          "val_acc": 0.66102,
+          "round_epoch": 8
+        },
+        {
+          "epoch": 9,
+          "train_loss": 1.35946,
+          "train_acc": 0.49722,
+          "val_loss": 1.51397,
+          "val_acc": 0.46731,
+          "round_epoch": 1
+        },
+        {
+          "epoch": 10,
+          "train_loss": 1.23941,
+          "train_acc": 0.57766,
+          "val_loss": 1.83864,
+          "val_acc": 0.30024,
+          "round_epoch": 2
+        },
+        {
+          "epoch": 11,
+          "train_loss": 1.22953,
+          "train_acc": 0.57253,
+          "val_loss": 1.53668,
+          "val_acc": 0.31235,
+          "round_epoch": 3
+        },
+        {
+          "epoch": 12,
+          "train_loss": 1.20629,
+          "train_acc": 0.59521,
+          "val_loss": 1.18643,
+          "val_acc": 0.5109,
+          "round_epoch": 4
+        },
+        {
+          "epoch": 13,
+          "train_loss": 1.16743,
+          "train_acc": 0.61489,
+          "val_loss": 1.18322,
+          "val_acc": 0.58596,
+          "round_epoch": 5
+        },
+        {
+          "epoch": 14,
+          "train_loss": 1.11635,
+          "train_acc": 0.64442,
+          "val_loss": 1.09116,
+          "val_acc": 0.68039,
+          "round_epoch": 6
+        },
+        {
+          "epoch": 15,
+          "train_loss": 1.09004,
+          "train_acc": 0.65469,
+          "val_loss": 1.05887,
+          "val_acc": 0.62954,
+          "round_epoch": 7
+        },
+        {
+          "epoch": 16,
+          "train_loss": 1.08437,
+          "train_acc": 0.64484,
+          "val_loss": 1.04507,
+          "val_acc": 0.68523,
+          "round_epoch": 8
+        }
+      ],
+      "task": "classification",
+      "arch": "transfer_head",
+      "best_val": {
+        "epoch": 8,
+        "train_loss": 1.08437,
+        "train_acc": 0.64484,
+        "val_loss": 1.04507,
+        "val_acc": 0.68523,
+        "acc": 0.68523,
+        "macro_f1": 0.57979,
+        "per_class": [
+          {
+            "class": 0,
+            "support": 150,
+            "precision": 0.9346,
+            "recall": 0.9533,
+            "f1": 0.9439
+          },
+          {
+            "class": 1,
+            "support": 56,
+            "precision": 0.3966,
+            "recall": 0.8214,
+            "f1": 0.5349
+          },
+          {
+            "class": 2,
+            "support": 135,
+            "precision": 0.8272,
+            "recall": 0.4963,
+            "f1": 0.6204
+          },
+          {
+            "class": 3,
+            "support": 28,
+            "precision": 0.35,
+            "recall": 0.5,
+            "f1": 0.4118
+          },
+          {
+            "class": 4,
+            "support": 44,
+            "precision": 0.5652,
+            "recall": 0.2955,
+            "f1": 0.3881
+          }
+        ],
+        "confusion_matrix": [
+          [
+            143,
+            7,
+            0,
+            0,
+            0
+          ],
+          [
+            6,
+            46,
+            3,
+            0,
+            1
+          ],
+          [
+            4,
+            45,
+            67,
+            14,
+            5
+          ],
+          [
+            0,
+            4,
+            6,
+            14,
+            4
+          ],
+          [
+            0,
+            14,
+            5,
+            12,
+            13
+          ]
+        ]
+      },
+      "test_metrics": {
+        "test_acc": 0.72881,
+        "test_samples": 413,
+        "macro_f1": 0.65199,
+        "per_class": [
+          {
+            "class": 0,
+            "support": 150,
+            "precision": 0.9796,
+            "recall": 0.96,
+            "f1": 0.9697
+          },
+          {
+            "class": 1,
+            "support": 56,
+            "precision": 0.4623,
+            "recall": 0.875,
+            "f1": 0.6049
+          },
+          {
+            "class": 2,
+            "support": 135,
+            "precision": 0.7865,
+            "recall": 0.5185,
+            "f1": 0.625
+          },
+          {
+            "class": 3,
+            "support": 28,
+            "precision": 0.4146,
+            "recall": 0.6071,
+            "f1": 0.4928
+          },
+          {
+            "class": 4,
+            "support": 44,
+            "precision": 0.7,
+            "recall": 0.4773,
+            "f1": 0.5676
+          }
+        ],
+        "confusion_matrix": [
+          [
+            144,
+            6,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            49,
+            3,
+            0,
+            3
+          ],
+          [
+            2,
+            41,
+            70,
+            17,
+            5
+          ],
+          [
+            0,
+            2,
+            8,
+            17,
+            1
+          ],
+          [
+            0,
+            8,
+            8,
+            7,
+            21
+          ]
+        ]
+      },
+      "config": {
+        "backbone": "resnet18",
+        "img_size": 256,
+        "augment": "medium",
+        "aug_copies": 4,
+        "epochs": 8,
+        "lr": 0.002,
+        "batch_size": 16,
+        "weight_decay": 0.0005,
+        "dropout": 0.15,
+        "label_smoothing": 0.05,
+        "class_weight": true,
+        "mode": "finetune",
+        "finetune_lr": 0.0003,
+        "source": "rule-revised",
+        "reason": "AI 不可用，按诊断（plateau）自动调整（第 1 次调整）",
+        "_level": 1
+      },
+      "datacard": {
+        "rows": 2750,
+        "task_hint": "image_classification",
+        "splits": {
+          "train": 1924,
+          "test": 413,
+          "val": 413
+        },
+        "n_classes": 5,
+        "class_counts": {
+          "0_healthy": 1000,
+          "2_moderate": 900,
+          "1_mild": 370,
+          "4_proliferate": 290,
+          "3_severe": 190
+        },
+        "min_class": 190,
+        "max_class": 1000,
+        "imbalance": 5.26,
+        "image_root": "E:\\workbuddy\\nn-studio-mvp\\backend\\storage\\_work_ds_b766770080",
+        "bad_images": 0,
+        "probed_images": 40,
+        "bad_ratio": 0.0
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "plan": {
+            "backbone": "mobilenet_v3_small",
+            "img_size": 224,
+            "augment": "medium",
+            "aug_copies": 2,
+            "epochs": 8,
+            "lr": 0.002,
+            "batch_size": 16,
+            "weight_decay": 0.0005,
+            "dropout": 0.15,
+            "label_smoothing": 0.05,
+            "class_weight": true,
+            "mode": "finetune",
+            "finetune_lr": 0.0003,
+            "source": "rule",
+            "reason": "样本 2750 条 · 类别 5 个 · 最大/最小类比 5.26"
+          },
+          "val": {
+            "acc": 0.66344,
+            "macro_f1": 0.53111,
+            "qwk": 0.75414,
+            "per_class": [
+              {
+                "class": 0,
+                "support": 150,
+                "precision": 0.9367,
+                "recall": 0.9867,
+                "f1": 0.961
+              },
+              {
+                "class": 1,
+                "support": 56,
+                "precision": 0.5,
+                "recall": 0.5714,
+                "f1": 0.5333
+              },
+              {
+                "class": 2,
+                "support": 135,
+                "precision": 0.7172,
+                "recall": 0.5259,
+                "f1": 0.6068
+              },
+              {
+                "class": 3,
+                "support": 28,
+                "precision": 0.2045,
+                "recall": 0.3214,
+                "f1": 0.25
+              },
+              {
+                "class": 4,
+                "support": 44,
+                "precision": 0.2917,
+                "recall": 0.3182,
+                "f1": 0.3043
+              }
+            ],
+            "confusion_matrix": [
+              [
+                148,
+                1,
+                0,
+                1,
+                0
+              ],
+              [
+                5,
+                32,
+                12,
+                3,
+                4
+              ],
+              [
+                5,
+                19,
+                71,
+                19,
+                21
+              ],
+              [
+                0,
+                4,
+                6,
+                9,
+                9
+              ],
+              [
+                0,
+                8,
+                10,
+                12,
+                14
+              ]
+            ]
+          },
+          "test": {
+            "test_acc": 0.72397,
+            "test_samples": 413,
+            "macro_f1": 0.62323,
+            "per_class": [
+              {
+                "class": 0,
+                "support": 150,
+                "precision": 0.961,
+                "recall": 0.9867,
+                "f1": 0.9737
+              },
+              {
+                "class": 1,
+                "support": 56,
+                "precision": 0.5733,
+                "recall": 0.7679,
+                "f1": 0.6565
+              },
+              {
+                "class": 2,
+                "support": 135,
+                "precision": 0.7732,
+                "recall": 0.5556,
+                "f1": 0.6466
+              },
+              {
+                "class": 3,
+                "support": 28,
+                "precision": 0.3913,
+                "recall": 0.6429,
+                "f1": 0.4865
+              },
+              {
+                "class": 4,
+                "support": 44,
+                "precision": 0.3659,
+                "recall": 0.3409,
+                "f1": 0.3529
+              }
+            ],
+            "confusion_matrix": [
+              [
+                148,
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                43,
+                4,
+                3,
+                5
+              ],
+              [
+                3,
+                20,
+                75,
+                18,
+                19
+              ],
+              [
+                0,
+                1,
+                7,
+                18,
+                2
+              ],
+              [
+                2,
+                9,
+                11,
+                7,
+                15
+              ]
+            ]
+          },
+          "history": [
+            {
+              "epoch": 1,
+              "train_loss": 1.35569,
+              "train_acc": 0.53616,
+              "val_loss": 1.12352,
+              "val_acc": 0.6368
+            },
+            {
+              "epoch": 2,
+              "train_loss": 1.25644,
+              "train_acc": 0.57125,
+              "val_loss": 1.12679,
+              "val_acc": 0.61743
+            },
+            {
+              "epoch": 3,
+              "train_loss": 1.21749,
+              "train_acc": 0.5935,
+              "val_loss": 1.09832,
+              "val_acc": 0.64891
+            },
+            {
+              "epoch": 4,
+              "train_loss": 1.18409,
+              "train_acc": 0.60933,
+              "val_loss": 1.0755,
+              "val_acc": 0.66344
+            },
+            {
+              "epoch": 5,
+              "train_loss": 1.17353,
+              "train_acc": 0.61789,
+              "val_loss": 1.13564,
+              "val_acc": 0.61743
+            },
+            {
+              "epoch": 6,
+              "train_loss": 1.13904,
+              "train_acc": 0.6119,
+              "val_loss": 1.12371,
+              "val_acc": 0.60533
+            },
+            {
+              "epoch": 7,
+              "train_loss": 1.13902,
+              "train_acc": 0.63885,
+              "val_loss": 1.11596,
+              "val_acc": 0.64649
+            },
+            {
+              "epoch": 8,
+              "train_loss": 1.12731,
+              "train_acc": 0.63671,
+              "val_loss": 1.09052,
+              "val_acc": 0.66102
+            }
+          ],
+          "verdict": "plateau",
+          "hint": "指标尚可但有提升空间：换更强 backbone 或提高输入尺寸再试一轮",
+          "stop_reason": ""
+        },
+        {
+          "round": 2,
+          "plan": {
+            "backbone": "resnet18",
+            "img_size": 256,
+            "augment": "medium",
+            "aug_copies": 4,
+            "epochs": 8,
+            "lr": 0.002,
+            "batch_size": 16,
+            "weight_decay": 0.0005,
+            "dropout": 0.15,
+            "label_smoothing": 0.05,
+            "class_weight": true,
+            "mode": "finetune",
+            "finetune_lr": 0.0003,
+            "source": "rule-revised",
+            "reason": "AI 不可用，按诊断（plateau）自动调整（第 1 次调整）",
+            "_level": 1
+          },
+          "val": {
+            "acc": 0.68523,
+            "macro_f1": 0.57979,
+            "qwk": 0.77134,
+            "per_class": [
+              {
+                "class": 0,
+                "support": 150,
+                "precision": 0.9346,
+                "recall": 0.9533,
+                "f1": 0.9439
+              },
+              {
+                "class": 1,
+                "support": 56,
+                "precision": 0.3966,
+                "recall": 0.8214,
+                "f1": 0.5349
+              },
+              {
+                "class": 2,
+                "support": 135,
+                "precision": 0.8272,
+                "recall": 0.4963,
+                "f1": 0.6204
+              },
+              {
+                "class": 3,
+                "support": 28,
+                "precision": 0.35,
+                "recall": 0.5,
+                "f1": 0.4118
+              },
+              {
+                "class": 4,
+                "support": 44,
+                "precision": 0.5652,
+                "recall": 0.2955,
+                "f1": 0.3881
+              }
+            ],
+            "confusion_matrix": [
+              [
+                143,
+                7,
+                0,
+                0,
+                0
+              ],
+              [
+                6,
+                46,
+                3,
+                0,
+                1
+              ],
+              [
+                4,
+                45,
+                67,
+                14,
+                5
+              ],
+              [
+                0,
+                4,
+                6,
+                14,
+                4
+              ],
+              [
+                0,
+                14,
+                5,
+                12,
+                13
+              ]
+            ]
+          },
+          "test": {
+            "test_acc": 0.72881,
+            "test_samples": 413,
+            "macro_f1": 0.65199,
+            "per_class": [
+              {
+                "class": 0,
+                "support": 150,
+                "precision": 0.9796,
+                "recall": 0.96,
+                "f1": 0.9697
+              },
+              {
+                "class": 1,
+                "support": 56,
+                "precision": 0.4623,
+                "recall": 0.875,
+                "f1": 0.6049
+              },
+              {
+                "class": 2,
+                "support": 135,
+                "precision": 0.7865,
+                "recall": 0.5185,
+                "f1": 0.625
+              },
+              {
+                "class": 3,
+                "support": 28,
+                "precision": 0.4146,
+                "recall": 0.6071,
+                "f1": 0.4928
+              },
+              {
+                "class": 4,
+                "support": 44,
+                "precision": 0.7,
+                "recall": 0.4773,
+                "f1": 0.5676
+              }
+            ],
+            "confusion_matrix": [
+              [
+                144,
+                6,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                49,
+                3,
+                0,
+                3
+              ],
+              [
+                2,
+                41,
+                70,
+                17,
+                5
+              ],
+              [
+                0,
+                2,
+                8,
+                17,
+                1
+              ],
+              [
+                0,
+                8,
+                8,
+                7,
+                21
+              ]
+            ]
+          },
+          "history": [
+            {
+              "epoch": 1,
+              "train_loss": 1.35946,
+              "train_acc": 0.49722,
+              "val_loss": 1.51397,
+              "val_acc": 0.46731
+            },
+            {
+              "epoch": 2,
+              "train_loss": 1.23941,
+              "train_acc": 0.57766,
+              "val_loss": 1.83864,
+              "val_acc": 0.30024
+            },
+            {
+              "epoch": 3,
+              "train_loss": 1.22953,
+              "train_acc": 0.57253,
+              "val_loss": 1.53668,
+              "val_acc": 0.31235
+            },
+            {
+              "epoch": 4,
+              "train_loss": 1.20629,
+              "train_acc": 0.59521,
+              "val_loss": 1.18643,
+              "val_acc": 0.5109
+            },
+            {
+              "epoch": 5,
+              "train_loss": 1.16743,
+              "train_acc": 0.61489,
+              "val_loss": 1.18322,
+              "val_acc": 0.58596
+            },
+            {
+              "epoch": 6,
+              "train_loss": 1.11635,
+              "train_acc": 0.64442,
+              "val_loss": 1.09116,
+              "val_acc": 0.68039
+            },
+            {
+              "epoch": 7,
+              "train_loss": 1.09004,
+              "train_acc": 0.65469,
+              "val_loss": 1.05887,
+              "val_acc": 0.62954
+            },
+            {
+              "epoch": 8,
+              "train_loss": 1.08437,
+              "train_acc": 0.64484,
+              "val_loss": 1.04507,
+              "val_acc": 0.68523
+            }
+          ],
+          "verdict": "plateau",
+          "hint": "指标尚可但有提升空间：换更强 backbone 或提高输入尺寸再试一轮",
+          "stop_reason": ""
+        }
+      ],
+      "advice": {
+        "level": "warn",
+        "summary": "指标尚可但已趋于平台期。",
+        "plain_summary": "效果还可以，但再练下去也不太会变好了。换个大点的模型或把数据补一补，可能还有提升空间。",
+        "plain_tips": [
+          "在「高级调优」里换个更���的模型试试",
+          "补充更多数据"
+        ],
+        "hint": "指标尚可但有提升空间：换更强 backbone 或提高输入尺寸再试一轮"
+      },
+      "split_info": {
+        "source": "dataset_split",
+        "note": "沿用数据集自带的 train/val/test 划分",
+        "train": 1924,
+        "val": 413,
+        "test": 413
+      }
+    },
+    "dataset_name": "眼底DR五级-DAY2",
+    "task_hint": "image_classification",
+    "train_seconds": 1111.7
+  },
+  "predict_error": "Multiple files found in ZIP file. Only one file per ZIP: ['test/0_healthy/Healthy_100.png', 'test/0_healthy/Healthy_104.png', 'test/0_healthy/Healthy_120.png', 'test/0_healthy/Healthy_130.png', 'test/0_healthy/Healthy_132.png', 'test/0_healthy/Healthy_139.png', 'test/0_healthy/Healthy_144.png', 'test/0_healthy/Healthy_148.png', 'test/0_healthy/Healthy_153.png', 'test/0_healthy/Healthy_17.png', 'test/0_healthy/Healthy_172.png', 'test/0_healthy/Healthy_173.png', 'test/0_healthy/Healthy_185.png', 'test/0_healthy/Healthy_187.png', 'test/0_healthy/Healthy_189.png', 'test/0_healthy/Healthy_202.png', 'test/0_healthy/Healthy_210.png', 'test/0_healthy/Healthy_212.png', 'test/0_healthy/Healthy_213.png', 'test/0_healthy/Healthy_216.png', 'test/0_healthy/Healthy_22.png', 'test/0_healthy/Healthy_220.png', 'test/0_healthy/Healthy_226.png', 'test/0_healthy/Healthy_227.png', 'test/0_healthy/Healthy_230.png', 'test/0_healthy/Healthy_233.png', 'test/0_healthy/Healthy_234.png', 'test/0_healthy/Healthy_235.png', 'test/0_healthy/Healthy_248.png', 'test/0_healthy/Healthy_252.png', 'test/0_healthy/Healthy_26.png', 'test/0_healthy/Healthy_260.png', 'test/0_healthy/Healthy_278.png', 'test/0_healthy/Healthy_299.png', 'test/0_healthy/Healthy_305.png', 'test/0_healthy/Healthy_307.png', 'test/0_healthy/Healthy_312.png', 'test/0_healthy/Healthy_313.png', 'test/0_healthy/Healthy_321.png', 'test/0_healthy/Healthy_323.png', 'test/0_healthy/Healthy_325.png', 'test/0_healthy/Healthy_332.png', 'test/0_healthy/Healthy_347.png', 'test/0_healthy/Healthy_355.png', 'test/0_healthy/Healthy_370.png', 'test/0_healthy/Healthy_374.png', 'test/0_healthy/Healthy_378.png', 'test/0_healthy/Healthy_390.png', 'test/0_healthy/Healthy_407.png', 'test/0_healthy/Healthy_41.png', 'test/0_healthy/Healthy_432.png', 'test/0_healthy/Healthy_441.png', 'test/0_healthy/Healthy_45.png', 'test/0_healthy/Healthy_466.png', 'test/0_healthy/Healthy_470.png', 'test/0_healthy/Healthy_478.png', 'test/0_healthy/Healthy_481.png', 'test/0_healthy/Healthy_482.png', 'test/0_healthy/Healthy_483.png', 'test/0_healthy/Healthy_49.png', 'test/0_healthy/Healthy_490.png', 'test/0_healthy/Healthy_494.png', 'test/0_healthy/Healthy_507.png', 'test/0_healthy/Healthy_51.png', 'test/0_healthy/Healthy_519.png', 'test/0_healthy/Healthy_52.png', 'test/0_healthy/Healthy_521.png', 'test/0_healthy/Healthy_525.png', 'test/0_healthy/Healthy_542.png', 'test/0_healthy/Healthy_547.png', 'test/0_healthy/Healthy_560.png', 'test/0_healthy/Healthy_561.png', 'test/0_healthy/Healthy_59.png', 'test/0_healthy/Healthy_595.png', 'test/0_healthy/Healthy_598.png', 'test/0_healthy/Healthy_60.png', 'test/0_healthy/Healthy_600.png', 'test/0_healthy/Healthy_605.png', 'test/0_healthy/Healthy_62.png', 'test/0_healthy/Healthy_622.png', 'test/0_healthy/Healthy_631.png', 'test/0_healthy/Healthy_632.png', 'test/0_healthy/Healthy_634.png', 'test/0_healthy/Healthy_643.png', 'test/0_healthy/Healthy_646.png', 'test/0_healthy/Healthy_650.png', 'test/0_healthy/Healthy_657.png', 'test/0_healthy/Healthy_66.png', 'test/0_healthy/Healthy_662.png', 'test/0_healthy/Healthy_665.png', 'test/0_healthy/Healthy_670.png', 'test/0_healthy/Healthy_673.png', 'test/0_healthy/Healthy_684.png', 'test/0_healthy/Healthy_686.png', 'test/0_healthy/Healthy_693.png', 'test/0_healthy/Healthy_695.png', 'test/0_healthy/Healthy_697.png', 'test/0_healthy/Healthy_702.png', 'test/0_healthy/Healthy_73.png', 'test/0_healthy/Healthy_731.png', 'test/0_healthy/Healthy_736.png', 'test/0_healthy/Healthy_738.png', 'test/0_healthy/Healthy_752.png', 'test/0_healthy/Healthy_774.png', 'test/0_healthy/Healthy_775.png', 'test/0_healthy/Healthy_777.png', 'test/0_healthy/Healthy_78.png', 'test/0_healthy/Healthy_781.png', 'test/0_healthy/Healthy_787.png', 'test/0_healthy/Healthy_793.png', 'test/0_healthy/Healthy_795.png', 'test/0_healthy/Healthy_801.png', 'test/0_healthy/Healthy_807.png', 'test/0_healthy/Healthy_809.png', 'test/0_healthy/Healthy_816.png', 'test/0_healthy/Healthy_824.png', 'test/0_healthy/Healthy_828.png', 'test/0_healthy/Healthy_850.png', 'test/0_healthy/Healthy_854.png', 'test/0_healthy/Healthy_862.png', 'test/0_healthy/Healthy_87.png', 'test/0_healthy/Healthy_870.png', 'test/0_healthy/Healthy_872.png', 'test/0_healthy/Healthy_873.png', 'test/0_healthy/Healthy_878.png', 'test/0_healthy/Healthy_896.png', 'test/0_healthy/Healthy_9.png', 'test/0_healthy/Healthy_907.png', 'test/0_healthy/Healthy_909.png', 'test/0_healthy/Healthy_911.png', 'test/0_healthy/Healthy_912.png', 'test/0_healthy/Healthy_921.png', 'test/0_healthy/Healthy_923.png', 'test/0_healthy/Healthy_928.png', 'test/0_healthy/Healthy_937.png', 'test/0_healthy/Healthy_939.png', 'test/0_healthy/Healthy_94.png', 'test/0_healthy/Healthy_946.png', 'test/0_healthy/Healthy_95.png', 'test/0_healthy/Healthy_950.png', 'test/0_healthy/Healthy_974.png', 'test/0_healthy/Healthy_978.png', 'test/0_healthy/Healthy_98.png', 'test/0_healthy/Healthy_981.png', 'test/0_healthy/Healthy_988.png', 'test/0_healthy/Healthy_990.png', 'test/0_healthy/Healthy_993.png', 'test/0_healthy/Healthy_994.png', 'test/0_healthy/Healthy_995.png', 'test/0_healthy/Healthy_996.png', 'test/1_mild/Mild_DR_102.png', 'test/1_mild/Mild_DR_12.png', 'test/1_mild/Mild_DR_122.png', 'test/1_mild/Mild_DR_126.png', 'test/1_mild/Mild_DR_136.png', 'test/1_mild/Mild_DR_142.png', 'test/1_mild/Mild_DR_153.png', 'test/1_mild/Mild_DR_156.png', 'test/1_mild/Mild_DR_16.png', 'test/1_mild/Mild_DR_167.png', 'test/1_mild/Mild_DR_171.png', 'test/1_mild/Mild_DR_172.png', 'test/1_mild/Mild_DR_174.png', 'test/1_mild/Mild_DR_175.png', 'test/1_mild/Mild_DR_180.png', 'test/1_mild/Mild_DR_188.png', 'test/1_mild/Mild_DR_194.png', 'test/1_mild/Mild_DR_2.png', 'test/1_mild/Mild_DR_206.png', 'test/1_mild/Mild_DR_209.png', 'test/1_mild/Mild_DR_211.png', 'test/1_mild/Mild_DR_217.png', 'test/1_mild/Mild_DR_220.png', 'test/1_mild/Mild_DR_228.png', 'test/1_mild/Mild_DR_232.png', 'test/1_mild/Mild_DR_240.png', 'test/1_mild/Mild_DR_246.png', 'test/1_mild/Mild_DR_256.png', 'test/1_mild/Mild_DR_262.png', 'test/1_mild/Mild_DR_266.png', 'test/1_mild/Mild_DR_268.png', 'test/1_mild/Mild_DR_27.png', 'test/1_mild/Mild_DR_274.png', 'test/1_mild/Mild_DR_275.png', 'test/1_mild/Mild_DR_276.png', 'test/1_mild/Mild_DR_280.png', 'test/1_mild/Mild_DR_287.png', 'test/1_mild/Mild_DR_292.png', 'test/1_mild/Mild_DR_294.png', 'test/1_mild/Mild_DR_309.png', 'test/1_mild/Mild_DR_316.png', 'test/1_mild/Mild_DR_323.png', 'test/1_mild/Mild_DR_345.png', 'test/1_mild/Mild_DR_36.png', 'test/1_mild/Mild_DR_368.png', 'test/1_mild/Mild_DR_37.png', 'test/1_mild/Mild_DR_39.png', 'test/1_mild/Mild_DR_49.png', 'test/1_mild/Mild_DR_59.png', 'test/1_mild/Mild_DR_62.png', 'test/1_mild/Mild_DR_65.png', 'test/1_mild/Mild_DR_74.png', 'test/1_mild/Mild_DR_84.png', 'test/1_mild/Mild_DR_90.png', 'test/1_mild/Mild_DR_93.png', 'test/1_mild/Mild_DR_94.png', 'test/2_moderate/Moderate_DR_100.png', 'test/2_moderate/Moderate_DR_124.png', 'test/2_moderate/Moderate_DR_125.png', 'test/2_moderate/Moderate_DR_138.png', 'test/2_moderate/Moderate_DR_14.png', 'test/2_moderate/Moderate_DR_141.png', 'test/2_moderate/Moderate_DR_143.png', 'test/2_moderate/Moderate_DR_148.png', 'test/2_moderate/Moderate_DR_155.png', 'test/2_moderate/Moderate_DR_158.png', 'test/2_moderate/Moderate_DR_165.png', 'test/2_moderate/Moderate_DR_168.png', 'test/2_moderate/Moderate_DR_170.png', 'test/2_moderate/Moderate_DR_171.png', 'test/2_moderate/Moderate_DR_182.png', 'test/2_moderate/Moderate_DR_189.png', 'test/2_moderate/Moderate_DR_190.png', 'test/2_moderate/Moderate_DR_203.png', 'test/2_moderate/Moderate_DR_206.png', 'test/2_moderate/Moderate_DR_222.png', 'test/2_moderate/Moderate_DR_230.png', 'test/2_moderate/Moderate_DR_232.png', 'test/2_moderate/Moderate_DR_244.png', 'test/2_moderate/Moderate_DR_249.png', 'test/2_moderate/Moderate_DR_250.png', 'test/2_moderate/Moderate_DR_264.png', 'test/2_moderate/Moderate_DR_274.png', 'test/2_moderate/Moderate_DR_275.png', 'test/2_moderate/Moderate_DR_276.png', 'test/2_moderate/Moderate_DR_279.png', 'test/2_moderate/Moderate_DR_282.png', 'test/2_moderate/Moderate_DR_288.png', 'test/2_moderate/Moderate_DR_293.png', 'test/2_moderate/Moderate_DR_297.png', 'test/2_moderate/Moderate_DR_303.png', 'test/2_moderate/Moderate_DR_313.png', 'test/2_moderate/Moderate_DR_316.png', 'test/2_moderate/Moderate_DR_32.png', 'test/2_moderate/Moderate_DR_321.png', 'test/2_moderate/Moderate_DR_330.png', 'test/2_moderate/Moderate_DR_333.png', 'test/2_moderate/Moderate_DR_335.png', 'test/2_moderate/Moderate_DR_339.png', 'test/2_moderate/Moderate_DR_344.png', 'test/2_moderate/Moderate_DR_351.png', 'test/2_moderate/Moderate_DR_358.png', 'test/2_moderate/Moderate_DR_364.png', 'test/2_moderate/Moderate_DR_368.png', 'test/2_moderate/Moderate_DR_373.png', 'test/2_moderate/Moderate_DR_382.png', 'test/2_moderate/Moderate_DR_408.png', 'test/2_moderate/Moderate_DR_423.png', 'test/2_moderate/Moderate_DR_424.png', 'test/2_moderate/Moderate_DR_425.png', 'test/2_moderate/Moderate_DR_428.png', 'test/2_moderate/Moderate_DR_43.png', 'test/2_moderate/Moderate_DR_434.png', 'test/2_moderate/Moderate_DR_443.png', 'test/2_moderate/Moderate_DR_450.png', 'test/2_moderate/Moderate_DR_46.png', 'test/2_moderate/Moderate_DR_48.png', 'test/2_moderate/Moderate_DR_484.png', 'test/2_moderate/Moderate_DR_485.png', 'test/2_moderate/Moderate_DR_488.png', 'test/2_moderate/Moderate_DR_49.png', 'test/2_moderate/Moderate_DR_503.png', 'test/2_moderate/Moderate_DR_507.png', 'test/2_moderate/Moderate_DR_509.png', 'test/2_moderate/Moderate_DR_517.png', 'test/2_moderate/Moderate_DR_520.png', 'test/2_moderate/Moderate_DR_527.png', 'test/2_moderate/Moderate_DR_531.png', 'test/2_moderate/Moderate_DR_534.png', 'test/2_moderate/Moderate_DR_538.png', 'test/2_moderate/Moderate_DR_546.png', 'test/2_moderate/Moderate_DR_549.png', 'test/2_moderate/Moderate_DR_551.png', 'test/2_moderate/Moderate_DR_554.png', 'test/2_moderate/Moderate_DR_566.png', 'test/2_moderate/Moderate_DR_572.png', 'test/2_moderate/Moderate_DR_573.png', 'test/2_moderate/Moderate_DR_612.png', 'test/2_moderate/Moderate_DR_614.png', 'test/2_moderate/Moderate_DR_621.png', 'test/2_moderate/Moderate_DR_622.png', 'test/2_moderate/Moderate_DR_623.png', 'test/2_moderate/Moderate_DR_624.png', 'test/2_moderate/Moderate_DR_629.png', 'test/2_moderate/Moderate_DR_646.png', 'test/2_moderate/Moderate_DR_647.png', 'test/2_moderate/Moderate_DR_655.png', 'test/2_moderate/Moderate_DR_665.png', 'test/2_moderate/Moderate_DR_668.png', 'test/2_moderate/Moderate_DR_669.png', 'test/2_moderate/Moderate_DR_671.png', 'test/2_moderate/Moderate_DR_680.png', 'test/2_moderate/Moderate_DR_692.png', 'test/2_moderate/Moderate_DR_696.png', 'test/2_moderate/Moderate_DR_706.png', 'test/2_moderate/Moderate_DR_707.png', 'test/2_moderate/Moderate_DR_721.png', 'test/2_moderate/Moderate_DR_727.png', 'test/2_moderate/Moderate_DR_738.png', 'test/2_moderate/Moderate_DR_740.png', 'test/2_moderate/Moderate_DR_741.png', 'test/2_moderate/Moderate_DR_743.png', 'test/2_moderate/Moderate_DR_744.png', 'test/2_moderate/Moderate_DR_748.png', 'test/2_moderate/Moderate_DR_751.png', 'test/2_moderate/Moderate_DR_755.png', 'test/2_moderate/Moderate_DR_76.png', 'test/2_moderate/Moderate_DR_761.png', 'test/2_moderate/Moderate_DR_785.png', 'test/2_moderate/Moderate_DR_795.png', 'test/2_moderate/Moderate_DR_801.png', 'test/2_moderate/Moderate_DR_815.png', 'test/2_moderate/Moderate_DR_819.png', 'test/2_moderate/Moderate_DR_820.png', 'test/2_moderate/Moderate_DR_822.png', 'test/2_moderate/Moderate_DR_824.png', 'test/2_moderate/Moderate_DR_826.png', 'test/2_moderate/Moderate_DR_830.png', 'test/2_moderate/Moderate_DR_832.png', 'test/2_moderate/Moderate_DR_844.png', 'test/2_moderate/Moderate_DR_849.png', 'test/2_moderate/Moderate_DR_853.png', 'test/2_moderate/Moderate_DR_859.png', 'test/2_moderate/Moderate_DR_862.png', 'test/2_moderate/Moderate_DR_871.png', 'test/2_moderate/Moderate_DR_881.png', 'test/2_moderate/Moderate_DR_884.png', 'test/2_moderate/Moderate_DR_89.png', 'test/2_moderate/Moderate_DR_890.png', 'test/2_moderate/Moderate_DR_896.png', 'test/2_moderate/Moderate_DR_93.png', 'test/3_severe/Severe DR_117.png', 'test/3_severe/Severe DR_120.png', 'test/3_severe/Severe DR_13.png', 'test/3_severe/Severe DR_130.png', 'test/3_severe/Severe DR_133.png', 'test/3_severe/Severe DR_139.png', 'test/3_severe/Severe DR_141.png', 'test/3_severe/Severe DR_144.png', 'test/3_severe/Severe DR_15.png', 'test/3_severe/Severe DR_162.png', 'test/3_severe/Severe DR_167.png', 'test/3_severe/Severe DR_171.png', 'test/3_severe/Severe DR_181.png', 'test/3_severe/Severe DR_182.png', 'test/3_severe/Severe DR_187.png', 'test/3_severe/Severe DR_188.png', 'test/3_severe/Severe DR_25.png', 'test/3_severe/Severe DR_34.png', 'test/3_severe/Severe DR_39.png', 'test/3_severe/Severe DR_43.png', 'test/3_severe/Severe DR_47.png', 'test/3_severe/Severe DR_58.png', 'test/3_severe/Severe DR_61.png', 'test/3_severe/Severe DR_66.png', 'test/3_severe/Severe DR_72.png', 'test/3_severe/Severe DR_91.png', 'test/3_severe/Severe DR_93.png', 'test/3_severe/Severe DR_97.png', 'test/4_proliferate/Proliferate DR.png', 'test/4_proliferate/Proliferate DR_123.png', 'test/4_proliferate/Proliferate DR_14.png', 'test/4_proliferate/Proliferate DR_140.png', 'test/4_proliferate/Proliferate DR_141.png', 'test/4_proliferate/Proliferate DR_149.png', 'test/4_proliferate/Proliferate DR_161.png', 'test/4_proliferate/Proliferate DR_166.png', 'test/4_proliferate/Proliferate DR_176.png', 'test/4_proliferate/Proliferate DR_177.png', 'test/4_proliferate/Proliferate DR_183.png', 'test/4_proliferate/Proliferate DR_189.png', 'test/4_proliferate/Proliferate DR_201.png', 'test/4_proliferate/Proliferate DR_204.png', 'test/4_proliferate/Proliferate DR_205.png', 'test/4_proliferate/Proliferate DR_210.png', 'test/4_proliferate/Proliferate DR_216.png', 'test/4_proliferate/Proliferate DR_218.png', 'test/4_proliferate/Proliferate DR_221.png', 'test/4_proliferate/Proliferate DR_222.png', 'test/4_proliferate/Proliferate DR_225.png', 'test/4_proliferate/Proliferate DR_231.png', 'test/4_proliferate/Proliferate DR_240.png', 'test/4_proliferate/Proliferate DR_245.png', 'test/4_proliferate/Proliferate DR_252.png', 'test/4_proliferate/Proliferate DR_255.png', 'test/4_proliferate/Proliferate DR_270.png', 'test/4_proliferate/Proliferate DR_28.png', 'test/4_proliferate/Proliferate DR_286.png', 'test/4_proliferate/Proliferate DR_289.png', 'test/4_proliferate/Proliferate DR_295.png', 'test/4_proliferate/Proliferate DR_3.png', 'test/4_proliferate/Proliferate DR_34.png', 'test/4_proliferate/Proliferate DR_49.png', 'test/4_proliferate/Proliferate DR_56.png', 'test/4_proliferate/Proliferate DR_6.png', 'test/4_proliferate/Proliferate DR_63.png', 'test/4_proliferate/Proliferate DR_65.png', 'test/4_proliferate/Proliferate DR_68.png', 'test/4_proliferate/Proliferate DR_7.png', 'test/4_proliferate/Proliferate DR_84.png', 'test/4_proliferate/Proliferate DR_90.png', 'test/4_proliferate/Proliferate DR_94.png', 'test/4_proliferate/Proliferate DR_96.png', 'train/0_healthy/Healthy_10.png', 'train/0_healthy/Healthy_1000.png', 'train/0_healthy/Healthy_101.png', 'train/0_healthy/Healthy_102.png', 'train/0_healthy/Healthy_105.png', 'train/0_healthy/Healthy_107.png', 'train/0_healthy/Healthy_109.png', 'train/0_healthy/Healthy_11.png', 'train/0_healthy/Healthy_110.png', 'train/0_healthy/Healthy_111.png', 'train/0_healthy/Healthy_112.png', 'train/0_healthy/Healthy_113.png', 'train/0_healthy/Healthy_114.png', 'train/0_healthy/Healthy_115.png', 'train/0_healthy/Healthy_116.png', 'train/0_healthy/Healthy_118.png', 'train/0_healthy/Healthy_119.png', 'train/0_healthy/Healthy_12.png', 'train/0_healthy/Healthy_121.png', 'train/0_healthy/Healthy_122.png', 'train/0_healthy/Healthy_126.png', 'train/0_healthy/Healthy_127.png', 'train/0_healthy/Healthy_128.png', 'train/0_healthy/Healthy_129.png', 'train/0_healthy/Healthy_131.png', 'train/0_healthy/Healthy_133.png', 'train/0_healthy/Healthy_134.png', 'train/0_healthy/Healthy_135.png', 'train/0_healthy/Healthy_136.png', 'train/0_healthy/Healthy_138.png', 'train/0_healthy/Healthy_14.png', 'train/0_healthy/Healthy_140.png', 'train/0_healthy/Healthy_141.png', 'train/0_healthy/Healthy_142.png', 'train/0_healthy/Healthy_143.png', 'train/0_healthy/Healthy_145.png', 'train/0_healthy/Healthy_146.png', 'train/0_healthy/Healthy_147.png', 'train/0_healthy/Healthy_149.png', 'train/0_healthy/Healthy_15.png', 'train/0_healthy/Healthy_150.png', 'train/0_healthy/Healthy_151.png', 'train/0_healthy/Healthy_152.png', 'train/0_healthy/Healthy_154.png', 'train/0_healthy/Healthy_155.png', 'train/0_healthy/Healthy_156.png', 'train/0_healthy/Healthy_157.png', 'train/0_healthy/Healthy_159.png', 'train/0_healthy/Healthy_16.png', 'train/0_healthy/Healthy_160.png', 'train/0_healthy/Healthy_161.png', 'train/0_healthy/Healthy_163.png', 'train/0_healthy/Healthy_164.png', 'train/0_healthy/Healthy_165.png', 'train/0_healthy/Healthy_166.png', 'train/0_healthy/Healthy_167.png', 'train/0_healthy/Healthy_169.png', 'train/0_healthy/Healthy_170.png', 'train/0_healthy/Healthy_171.png', 'train/0_healthy/Healthy_174.png', 'train/0_healthy/Healthy_175.png', 'train/0_healthy/Healthy_177.png', 'train/0_healthy/Healthy_179.png', 'train/0_healthy/Healthy_18.png', 'train/0_healthy/Healthy_182.png', 'train/0_healthy/Healthy_183.png', 'train/0_healthy/Healthy_184.png', 'train/0_healthy/Healthy_186.png', 'train/0_healthy/Healthy_188.png', 'train/0_healthy/Healthy_190.png', 'train/0_healthy/Healthy_191.png', 'train/0_healthy/Healthy_192.png', 'train/0_healthy/Healthy_193.png', 'train/0_healthy/Healthy_194.png', 'train/0_healthy/Healthy_196.png', 'train/0_healthy/Healthy_197.png', 'train/0_healthy/Healthy_198.png', 'train/0_healthy/Healthy_199.png', 'train/0_healthy/Healthy_2.png', 'train/0_healthy/Healthy_20.png', 'train/0_healthy/Healthy_200.png', 'train/0_healthy/Healthy_203.png', 'train/0_healthy/Healthy_204.png', 'train/0_healthy/Healthy_207.png', 'train/0_healthy/Healthy_208.png', 'train/0_healthy/Healthy_209.png', 'train/0_healthy/Healthy_21.png', 'train/0_healthy/Healthy_217.png', 'train/0_healthy/Healthy_218.png', 'train/0_healthy/Healthy_219.png', 'train/0_healthy/Healthy_221.png', 'train/0_healthy/Healthy_222.png', 'train/0_healthy/Healthy_223.png', 'train/0_healthy/Healthy_224.png', 'train/0_healthy/Healthy_225.png', 'train/0_healthy/Healthy_228.png', 'train/0_healthy/Healthy_229.png', 'train/0_healthy/Healthy_231.png', 'train/0_healthy/Healthy_232.png', 'train/0_healthy/Healthy_236.png', 'train/0_healthy/Healthy_238.png', 'train/0_healthy/Healthy_24.png', 'train/0_healthy/Healthy_240.png', 'train/0_healthy/Healthy_241.png', 'train/0_healthy/Healthy_242.png', 'train/0_healthy/Healthy_243.png', 'train/0_healthy/Healthy_244.png', 'train/0_healthy/Healthy_245.png', 'train/0_healthy/Healthy_246.png', 'train/0_healthy/Healthy_247.png', 'train/0_healthy/Healthy_249.png', 'train/0_healthy/Healthy_25.png', 'train/0_healthy/Healthy_251.png', 'train/0_healthy/Healthy_253.png', 'train/0_healthy/Healthy_254.png', 'train/0_healthy/Healthy_255.png', 'train/0_healthy/Healthy_256.png', 'train/0_healthy/Healthy_257.png', 'train/0_healthy/Healthy_258.png', 'train/0_healthy/Healthy_259.png', 'train/0_healthy/Healthy_261.png', 'train/0_healthy/Healthy_262.png', 'train/0_healthy/Healthy_263.png', 'train/0_healthy/Healthy_264.png', 'train/0_healthy/Healthy_266.png', 'train/0_healthy/Healthy_267.png', 'train/0_healthy/Healthy_268.png', 'train/0_healthy/Healthy_269.png', 'train/0_healthy/Healthy_27.png', 'train/0_healthy/Healthy_270.png', 'train/0_healthy/Healthy_271.png', 'train/0_healthy/Healthy_273.png', 'train/0_healthy/Healthy_274.png', 'train/0_healthy/Healthy_275.png', 'train/0_healthy/Healthy_277.png', 'train/0_healthy/Healthy_279.png', 'train/0_healthy/Healthy_280.png', 'train/0_healthy/Healthy_282.png', 'train/0_healthy/Healthy_283.png', 'train/0_healthy/Healthy_285.png', 'train/0_healthy/Healthy_286.png', 'train/0_healthy/Healthy_287.png', 'train/0_healthy/Healthy_288.png', 'train/0_healthy/Healthy_289.png', 'train/0_healthy/Healthy_29.png', 'train/0_healthy/Healthy_290.png', 'train/0_healthy/Healthy_291.png', 'train/0_healthy/Healthy_292.png', 'train/0_healthy/Healthy_293.png', 'train/0_healthy/Healthy_294.png', 'train/0_healthy/Healthy_296.png', 'train/0_healthy/Healthy_297.png', 'train/0_healthy/Healthy_298.png', 'train/0_healthy/Healthy_3.png', 'train/0_healthy/Healthy_300.png', 'train/0_healthy/Healthy_301.png', 'train/0_healthy/Healthy_302.png', 'train/0_healthy/Healthy_303.png', 'train/0_healthy/Healthy_304.png', 'train/0_healthy/Healthy_308.png', 'train/0_healthy/Healthy_309.png', 'train/0_healthy/Healthy_31.png', 'train/0_healthy/Healthy_311.png', 'train/0_healthy/Healthy_314.png', 'train/0_healthy/Healthy_316.png', 'train/0_healthy/Healthy_318.png', 'train/0_healthy/Healthy_32.png', 'train/0_healthy/Healthy_320.png', 'train/0_healthy/Healthy_322.png', 'train/0_healthy/Healthy_324.png', 'train/0_healthy/Healthy_327.png', 'train/0_healthy/Healthy_328.png', 'train/0_healthy/Healthy_329.png', 'train/0_healthy/Healthy_33.png', 'train/0_healthy/Healthy_330.png', 'train/0_healthy/Healthy_333.png', 'train/0_healthy/Healthy_334.png', 'train/0_healthy/Healthy_335.png', 'train/0_healthy/Healthy_336.png', 'train/0_healthy/Healthy_337.png', 'train/0_healthy/Healthy_338.png', 'train/0_healthy/Healthy_339.png', 'train/0_healthy/Healthy_340.png', 'train/0_healthy/Healthy_341.png', 'train/0_healthy/Healthy_342.png', 'train/0_healthy/Healthy_343.png', 'train/0_healthy/Healthy_346.png', 'train/0_healthy/Healthy_348.png', 'train/0_healthy/Healthy_35.png', 'train/0_healthy/Healthy_350.png', 'train/0_healthy/Healthy_352.png', 'train/0_healthy/Healthy_353.png', 'train/0_healthy/Healthy_354.png', 'train/0_healthy/Healthy_356.png', 'train/0_healthy/Healthy_357.png', 'train/0_healthy/Healthy_358.png', 'train/0_healthy/Healthy_359.png', 'train/0_healthy/Healthy_36.png', 'train/0_healthy/Healthy_360.png', 'train/0_healthy/Healthy_361.png', 'train/0_healthy/Healthy_362.png', 'train/0_healthy/Healthy_363.png', 'train/0_healthy/Healthy_364.png', 'train/0_healthy/Healthy_365.png', 'train/0_healthy/Healthy_367.png', 'train/0_healthy/Healthy_368.png', 'train/0_healthy/Healthy_369.png', 'train/0_healthy/Healthy_37.png', 'train/0_healthy/Healthy_371.png', 'train/0_healthy/Healthy_373.png', 'train/0_healthy/Healthy_376.png', 'train/0_healthy/Healthy_377.png', 'train/0_healthy/Healthy_379.png', 'train/0_healthy/Healthy_38.png', 'train/0_healthy/Healthy_380.png', 'train/0_healthy/Healthy_381.png', 'train/0_healthy/Healthy_383.png', 'train/0_healthy/Healthy_384.png', 'train/0_healthy/Healthy_385.png', 'train/0_healthy/Healthy_387.png', 'train/0_healthy/Healthy_389.png', 'train/0_healthy/Healthy_39.png', 'train/0_healthy/Healthy_391.png', 'train/0_healthy/Healthy_392.png', 'train/0_healthy/Healthy_393.png', 'train/0_healthy/Healthy_395.png', 'train/0_healthy/Healthy_396.png', 'train/0_healthy/Healthy_398.png', 'train/0_healthy/Healthy_399.png', 'train/0_healthy/Healthy_4.png', 'train/0_healthy/Healthy_40.png', 'train/0_healthy/Healthy_400.png', 'train/0_healthy/Healthy_401.png', 'train/0_healthy/Healthy_402.png', 'train/0_healthy/Healthy_403.png', 'train/0_healthy/Healthy_405.png', 'train/0_healthy/Healthy_406.png', 'train/0_healthy/Healthy_408.png', 'train/0_healthy/Healthy_409.png', 'train/0_healthy/Healthy_410.png', 'train/0_healthy/Healthy_411.png', 'train/0_healthy/Healthy_412.png', 'train/0_healthy/Healthy_414.png', 'train/0_healthy/Healthy_416.png', 'train/0_healthy/Healthy_417.png', 'train/0_healthy/Healthy_418.png', 'train/0_healthy/Healthy_42.png', 'train/0_healthy/Healthy_420.png', 'train/0_healthy/Healthy_421.png', 'train/0_healthy/Healthy_423.png', 'train/0_healthy/Healthy_424.png', 'train/0_healthy/Healthy_426.png', 'train/0_healthy/Healthy_427.png', 'train/0_healthy/Healthy_428.png', 'train/0_healthy/Healthy_430.png', 'train/0_healthy/Healthy_431.png', 'train/0_healthy/Healthy_433.png', 'train/0_healthy/Healthy_435.png', 'train/0_healthy/Healthy_436.png', 'train/0_healthy/Healthy_437.png', 'train/0_healthy/Healthy_438.png', 'train/0_healthy/Healthy_439.png', 'train/0_healthy/Healthy_44.png', 'train/0_healthy/Healthy_440.png', 'train/0_healthy/Healthy_442.png', 'train/0_healthy/Healthy_443.png', 'train/0_healthy/Healthy_444.png', 'train/0_healthy/Healthy_445.png', 'train/0_healthy/Healthy_446.png', 'train/0_healthy/Healthy_449.png', 'train/0_healthy/Healthy_450.png', 'train/0_healthy/Healthy_451.png', 'train/0_healthy/Healthy_452.png', 'train/0_healthy/Healthy_455.png', 'train/0_healthy/Healthy_456.png', 'train/0_healthy/Healthy_457.png', 'train/0_healthy/Healthy_458.png', 'train/0_healthy/Healthy_459.png', 'train/0_healthy/Healthy_46.png', 'train/0_healthy/Healthy_460.png', 'train/0_healthy/Healthy_461.png', 'train/0_healthy/Healthy_462.png', 'train/0_healthy/Healthy_463.png', 'train/0_healthy/Healthy_464.png', 'train/0_healthy/Healthy_465.png', 'train/0_healthy/Healthy_468.png', 'train/0_healthy/Healthy_469.png', 'train/0_healthy/Healthy_47.png', 'train/0_healthy/Healthy_471.png', 'train/0_healthy/Healthy_472.png', 'train/0_healthy/Healthy_473.png', 'train/0_healthy/Healthy_475.png', 'train/0_healthy/Healthy_476.png', 'train/0_healthy/Healthy_477.png', 'train/0_healthy/Healthy_479.png', 'train/0_healthy/Healthy_48.png', 'train/0_healthy/Healthy_484.png', 'train/0_healthy/Healthy_486.png', 'train/0_healthy/Healthy_487.png', 'train/0_healthy/Healthy_488.png', 'train/0_healthy/Healthy_491.png', 'train/0_healthy/Healthy_492.png', 'train/0_healthy/Healthy_493.png', 'train/0_healthy/Healthy_495.png', 'train/0_healthy/Healthy_496.png', 'train/0_healthy/Healthy_497.png', 'train/0_healthy/Healthy_498.png', 'train/0_healthy/Healthy_499.png', 'train/0_healthy/Healthy_50.png', 'train/0_healthy/Healthy_500.png', 'train/0_healthy/Healthy_502.png', 'train/0_healthy/Healthy_503.png', 'train/0_healthy/Healthy_504.png', 'train/0_healthy/Healthy_505.png', 'train/0_healthy/Healthy_506.png', 'train/0_healthy/Healthy_509.png', 'train/0_healthy/Healthy_510.png', 'train/0_healthy/Healthy_511.png', 'train/0_healthy/Healthy_512.png', 'train/0_healthy/Healthy_513.png', 'train/0_healthy/Healthy_514.png', 'train/0_healthy/Healthy_515.png', 'train/0_healthy/Healthy_517.png', 'train/0_healthy/Healthy_518.png', 'train/0_healthy/Healthy_520.png', 'train/0_healthy/Healthy_522.png', 'train/0_healthy/Healthy_523.png', 'train/0_healthy/Healthy_524.png', 'train/0_healthy/Healthy_526.png', 'train/0_healthy/Healthy_527.png', 'train/0_healthy/Healthy_528.png', 'train/0_healthy/Healthy_529.png', 'train/0_healthy/Healthy_530.png', 'train/0_healthy/Healthy_531.png', 'train/0_healthy/Healthy_532.png', 'train/0_healthy/Healthy_533.png', 'train/0_healthy/Healthy_534.png', 'train/0_healthy/Healthy_535.png', 'train/0_healthy/Healthy_536.png', 'train/0_healthy/Healthy_537.png', 'train/0_healthy/Healthy_538.png', 'train/0_healthy/Healthy_539.png', 'train/0_healthy/Healthy_54.png', 'train/0_healthy/Healthy_540.png', 'train/0_healthy/Healthy_541.png', 'train/0_healthy/Healthy_543.png', 'train/0_healthy/Healthy_544.png', 'train/0_healthy/Healthy_545.png', 'train/0_healthy/Healthy_546.png', 'train/0_healthy/Healthy_548.png', 'train/0_healthy/Healthy_549.png', 'train/0_healthy/Healthy_550.png', 'train/0_healthy/Healthy_551.png', 'train/0_healthy/Healthy_552.png', 'train/0_healthy/Healthy_553.png', 'train/0_healthy/Healthy_554.png', 'train/0_healthy/Healthy_555.png', 'train/0_healthy/Healthy_556.png', 'train/0_healthy/Healthy_557.png', 'train/0_healthy/Healthy_558.png', 'train/0_healthy/Healthy_562.png', 'train/0_healthy/Healthy_563.png', 'train/0_healthy/Healthy_564.png', 'train/0_healthy/Healthy_565.png', 'train/0_healthy/Healthy_566.png', 'train/0_healthy/Healthy_567.png', 'train/0_healthy/Healthy_568.png', 'train/0_healthy/Healthy_569.png', 'train/0_healthy/Healthy_57.png', 'train/0_healthy/Healthy_570.png', 'train/0_healthy/Healthy_571.png', 'train/0_healthy/Healthy_572.png', 'train/0_healthy/Healthy_574.png', 'train/0_healthy/Healthy_575.png', 'train/0_healthy/Healthy_576.png', 'train/0_healthy/Healthy_577.png', 'train/0_healthy/Healthy_579.png', 'train/0_healthy/Healthy_58.png', 'train/0_healthy/Healthy_580.png', 'train/0_healthy/Healthy_581.png', 'train/0_healthy/Healthy_582.png', 'train/0_healthy/Healthy_583.png', 'train/0_healthy/Healthy_584.png', 'train/0_healthy/Healthy_585.png', 'train/0_healthy/Healthy_586.png', 'train/0_healthy/Healthy_588.png', 'train/0_healthy/Healthy_590.png', 'train/0_healthy/Healthy_591.png', 'train/0_healthy/Healthy_592.png', 'train/0_healthy/Healthy_593.png', 'train/0_healthy/Healthy_597.png', 'train/0_healthy/Healthy_599.png', 'train/0_healthy/Healthy_6.png', 'train/0_healthy/Healthy_601.png', 'train/0_healthy/Healthy_602.png', 'train/0_healthy/Healthy_603.png', 'train/0_healthy/Healthy_606.png', 'train/0_healthy/Healthy_607.png', 'train/0_healthy/Healthy_608.png', 'train/0_healthy/Healthy_61.png', 'train/0_healthy/Healthy_610.png', 'train/0_healthy/Healthy_612.png', 'train/0_healthy/Healthy_613.png', 'train/0_healthy/Healthy_614.png', 'train/0_healthy/Healthy_615.png', 'train/0_healthy/Healthy_616.png', 'train/0_healthy/Healthy_617.png', 'train/0_healthy/Healthy_618.png', 'train/0_healthy/Healthy_619.png', 'train/0_healthy/Healthy_620.png', 'train/0_healthy/Healthy_623.png', 'train/0_healthy/Healthy_625.png', 'train/0_healthy/Healthy_626.png', 'train/0_healthy/Healthy_627.png', 'train/0_healthy/Healthy_629.png', 'train/0_healthy/Healthy_63.png', 'train/0_healthy/Healthy_630.png', 'train/0_healthy/Healthy_633.png', 'train/0_healthy/Healthy_635.png', 'train/0_healthy/Healthy_636.png', 'train/0_healthy/Healthy_638.png', 'train/0_healthy/Healthy_639.png', 'train/0_healthy/Healthy_64.png', 'train/0_healthy/Healthy_640.png', 'train/0_healthy/Healthy_641.png', 'train/0_healthy/Healthy_642.png', 'train/0_healthy/Healthy_644.png', 'train/0_healthy/Healthy_645.png', 'train/0_healthy/Healthy_647.png', 'train/0_healthy/Healthy_648.png', 'train/0_healthy/Healthy_649.png', 'train/0_healthy/Healthy_652.png', 'train/0_healthy/Healthy_653.png', 'train/0_healthy/Healthy_654.png', 'train/0_healthy/Healthy_655.png', 'train/0_healthy/Healthy_656.png', 'train/0_healthy/Healthy_658.png', 'train/0_healthy/Healthy_659.png', 'train/0_healthy/Healthy_661.png', 'train/0_healthy/Healthy_663.png', 'train/0_healthy/Healthy_664.png', 'train/0_healthy/Healthy_668.png', 'train/0_healthy/Healthy_669.png', 'train/0_healthy/Healthy_67.png', 'train/0_healthy/Healthy_671.png', 'train/0_healthy/Healthy_672.png', 'train/0_healthy/Healthy_674.png', 'train/0_healthy/Healthy_675.png', 'train/0_healthy/Healthy_676.png', 'train/0_healthy/Healthy_677.png', 'train/0_healthy/Healthy_678.png', 'train/0_healthy/Healthy_679.png', 'train/0_healthy/Healthy_681.png', 'train/0_healthy/Healthy_682.png', 'train/0_healthy/Healthy_683.png', 'train/0_healthy/Healthy_685.png', 'train/0_healthy/Healthy_687.png', 'train/0_healthy/Healthy_688.png', 'train/0_healthy/Healthy_689.png', 'train/0_healthy/Healthy_69.png', 'train/0_healthy/Healthy_691.png', 'train/0_healthy/Healthy_692.png', 'train/0_healthy/Healthy_694.png', 'train/0_healthy/Healthy_696.png', 'train/0_healthy/Healthy_698.png', 'train/0_healthy/Healthy_699.png', 'train/0_healthy/Healthy_7.png', 'train/0_healthy/Healthy_70.png', 'train/0_healthy/Healthy_700.png', 'train/0_healthy/Healthy_701.png', 'train/0_healthy/Healthy_703.png', 'train/0_healthy/Healthy_706.png', 'train/0_healthy/Healthy_707.png', 'train/0_healthy/Healthy_71.png', 'train/0_healthy/Healthy_710.png', 'train/0_healthy/Healthy_711.png', 'train/0_healthy/Healthy_712.png', 'train/0_healthy/Healthy_713.png', 'train/0_healthy/Healthy_714.png', 'train/0_healthy/Healthy_715.png', 'train/0_healthy/Healthy_716.png', 'train/0_healthy/Healthy_717.png', 'train/0_healthy/Healthy_718.png', 'train/0_healthy/Healthy_719.png', 'train/0_healthy/Healthy_72.png', 'train/0_healthy/Healthy_720.png', 'train/0_healthy/Healthy_721.png', 'train/0_healthy/Healthy_723.png', 'train/0_healthy/Healthy_724.png', 'train/0_healthy/Healthy_725.png', 'train/0_healthy/Healthy_727.png', 'train/0_healthy/Healthy_728.png', 'train/0_healthy/Healthy_729.png', 'train/0_healthy/Healthy_730.png', 'train/0_healthy/Healthy_732.png', 'train/0_healthy/Healthy_733.png', 'train/0_healthy/Healthy_734.png', 'train/0_healthy/Healthy_735.png', 'train/0_healthy/Healthy_737.png', 'train/0_healthy/Healthy_739.png', 'train/0_healthy/Healthy_740.png', 'train/0_healthy/Healthy_741.png', 'train/0_healthy/Healthy_742.png', 'train/0_healthy/Healthy_743.png', 'train/0_healthy/Healthy_745.png', 'train/0_healthy/Healthy_746.png', 'train/0_healthy/Healthy_747.png', 'train/0_healthy/Healthy_748.png', 'train/0_healthy/Healthy_749.png', 'train/0_healthy/Healthy_75.png', 'train/0_healthy/Healthy_751.png', 'train/0_healthy/Healthy_753.png', 'train/0_healthy/Healthy_754.png', 'train/0_healthy/Healthy_755.png', 'train/0_healthy/Healthy_756.png', 'train/0_healthy/Healthy_757.png', 'train/0_healthy/Healthy_758.png', 'train/0_healthy/Healthy_759.png', 'train/0_healthy/Healthy_76.png', 'train/0_healthy/Healthy_760.png', 'train/0_healthy/Healthy_761.png', 'train/0_healthy/Healthy_762.png', 'train/0_healthy/Healthy_763.png', 'train/0_healthy/Healthy_764.png', 'train/0_healthy/Healthy_765.png', 'train/0_healthy/Healthy_766.png', 'train/0_healthy/Healthy_767.png', 'train/0_healthy/Healthy_768.png', 'train/0_healthy/Healthy_769.png', 'train/0_healthy/Healthy_77.png', 'train/0_healthy/Healthy_771.png', 'train/0_healthy/Healthy_772.png', 'train/0_healthy/Healthy_773.png', 'train/0_healthy/Healthy_776.png', 'train/0_healthy/Healthy_778.png', 'train/0_healthy/Healthy_779.png', 'train/0_healthy/Healthy_780.png', 'train/0_healthy/Healthy_782.png', 'train/0_healthy/Healthy_783.png', 'train/0_healthy/Healthy_784.png', 'train/0_healthy/Healthy_786.png', 'train/0_healthy/Healthy_788.png', 'train/0_healthy/Healthy_789.png', 'train/0_healthy/Healthy_791.png', 'train/0_healthy/Healthy_792.png', 'train/0_healthy/Healthy_794.png', 'train/0_healthy/Healthy_796.png', 'train/0_healthy/Healthy_797.png', 'train/0_healthy/Healthy_799.png', 'train/0_healthy/Healthy_8.png', 'train/0_healthy/Healthy_80.png', 'train/0_healthy/Healthy_800.png', 'train/0_healthy/Healthy_802.png', 'train/0_healthy/Healthy_804.png', 'train/0_healthy/Healthy_805.png', 'train/0_healthy/Healthy_806.png', 'train/0_healthy/Healthy_808.png', 'train/0_healthy/Healthy_81.png', 'train/0_healthy/Healthy_810.png', 'train/0_healthy/Healthy_811.png', 'train/0_healthy/Healthy_813.png', 'train/0_healthy/Healthy_814.png', 'train/0_healthy/Healthy_815.png', 'train/0_healthy/Healthy_817.png', 'train/0_healthy/Healthy_819.png', 'train/0_healthy/Healthy_82.png', 'train/0_healthy/Healthy_820.png', 'train/0_healthy/Healthy_821.png', 'train/0_healthy/Healthy_822.png', 'train/0_healthy/Healthy_825.png', 'train/0_healthy/Healthy_827.png', 'train/0_healthy/Healthy_829.png', 'train/0_healthy/Healthy_83.png', 'train/0_healthy/Healthy_833.png', 'train/0_healthy/Healthy_834.png', 'train/0_healthy/Healthy_836.png', 'train/0_healthy/Healthy_837.png', 'train/0_healthy/Healthy_838.png', 'train/0_healthy/Healthy_839.png', 'train/0_healthy/Healthy_84.png', 'train/0_healthy/Healthy_840.png', 'train/0_healthy/Healthy_841.png', 'train/0_healthy/Healthy_842.png', 'train/0_healthy/Healthy_843.png', 'train/0_healthy/Healthy_844.png', 'train/0_healthy/Healthy_845.png', 'train/0_healthy/Healthy_847.png', 'train/0_healthy/Healthy_848.png', 'train/0_healthy/Healthy_849.png', 'train/0_healthy/Healthy_85.png', 'train/0_healthy/Healthy_852.png', 'train/0_healthy/Healthy_853.png', 'train/0_healthy/Healthy_855.png', 'train/0_healthy/Healthy_856.png', 'train/0_healthy/Healthy_857.png', 'train/0_healthy/Healthy_858.png', 'train/0_healthy/Healthy_859.png', 'train/0_healthy/Healthy_86.png', 'train/0_healthy/Healthy_860.png', 'train/0_healthy/Healthy_861.png', 'train/0_healthy/Healthy_864.png', 'train/0_healthy/Healthy_865.png', 'train/0_healthy/Healthy_866.png', 'train/0_healthy/Healthy_868.png', 'train/0_healthy/Healthy_869.png', 'train/0_healthy/Healthy_871.png', 'train/0_healthy/Healthy_874.png', 'train/0_healthy/Healthy_875.png', 'train/0_healthy/Healthy_876.png', 'train/0_healthy/Healthy_877.png', 'train/0_healthy/Healthy_879.png', 'train/0_healthy/Healthy_880.png', 'train/0_healthy/Healthy_881.png', 'train/0_healthy/Healthy_882.png', 'train/0_healthy/Healthy_883.png', 'train/0_healthy/Healthy_884.png', 'train/0_healthy/Healthy_885.png', 'train/0_healthy/Healthy_886.png', 'train/0_healthy/Healthy_887.png', 'train/0_healthy/Healthy_888.png', 'train/0_healthy/Healthy_889.png', 'train/0_healthy/Healthy_89.png', 'train/0_healthy/Healthy_890.png', 'train/0_healthy/Healthy_891.png', 'train/0_healthy/Healthy_893.png', 'train/0_healthy/Healthy_895.png', 'train/0_healthy/Healthy_897.png', 'train/0_healthy/Healthy_90.png', 'train/0_healthy/Healthy_902.png', 'train/0_healthy/Healthy_903.png', 'train/0_healthy/Healthy_904.png', 'train/0_healthy/Healthy_906.png', 'train/0_healthy/Healthy_908.png', 'train/0_healthy/Healthy_91.png', 'train/0_healthy/Healthy_913.png', 'train/0_healthy/Healthy_914.png', 'train/0_healthy/Healthy_915.png', 'train/0_healthy/Healthy_916.png', 'train/0_healthy/Healthy_918.png', 'train/0_healthy/Healthy_92.png', 'train/0_healthy/Healthy_920.png', 'train/0_healthy/Healthy_922.png', 'train/0_healthy/Healthy_924.png', 'train/0_healthy/Healthy_925.png', 'train/0_healthy/Healthy_926.png', 'train/0_healthy/Healthy_927.png', 'train/0_healthy/Healthy_929.png', 'train/0_healthy/Healthy_93.png', 'train/0_healthy/Healthy_930.png', 'train/0_healthy/Healthy_931.png', 'train/0_healthy/Healthy_932.png', 'train/0_healthy/Healthy_933.png', 'train/0_healthy/Healthy_934.png', 'train/0_healthy/Healthy_935.png', 'train/0_healthy/Healthy_936.png', 'train/0_healthy/Healthy_938.png', 'train/0_healthy/Healthy_941.png', 'train/0_healthy/Healthy_943.png', 'train/0_healthy/Healthy_944.png', 'train/0_healthy/Healthy_947.png', 'train/0_healthy/Healthy_948.png', 'train/0_healthy/Healthy_951.png', 'train/0_healthy/Healthy_952.png', 'train/0_healthy/Healthy_953.png', 'train/0_healthy/Healthy_955.png', 'train/0_healthy/Healthy_956.png', 'train/0_healthy/Healthy_957.png', 'train/0_healthy/Healthy_958.png', 'train/0_healthy/Healthy_959.png', 'train/0_healthy/Healthy_96.png', 'train/0_healthy/Healthy_960.png', 'train/0_healthy/Healthy_961.png', 'train/0_healthy/Healthy_962.png', 'train/0_healthy/Healthy_964.png', 'train/0_healthy/Healthy_965.png', 'train/0_healthy/Healthy_967.png', 'train/0_healthy/Healthy_968.png', 'train/0_healthy/Healthy_969.png', 'train/0_healthy/Healthy_97.png', 'train/0_healthy/Healthy_970.png', 'train/0_healthy/Healthy_971.png', 'train/0_healthy/Healthy_972.png', 'train/0_healthy/Healthy_973.png', 'train/0_healthy/Healthy_975.png', 'train/0_healthy/Healthy_976.png', 'train/0_healthy/Healthy_977.png', 'train/0_healthy/Healthy_979.png', 'train/0_healthy/Healthy_980.png', 'train/0_healthy/Healthy_982.png', 'train/0_healthy/Healthy_983.png', 'train/0_healthy/Healthy_984.png', 'train/0_healthy/Healthy_985.png', 'train/0_healthy/Healthy_986.png', 'train/0_healthy/Healthy_987.png', 'train/0_healthy/Healthy_989.png', 'train/0_healthy/Healthy_99.png', 'train/0_healthy/Healthy_992.png', 'train/0_healthy/Healthy_997.png', 'train/0_healthy/Healthy_998.png', 'train/0_healthy/Healthy_999.png', 'train/1_mild/Mild_DR.png', 'train/1_mild/Mild_DR_10.png', 'train/1_mild/Mild_DR_100.png', 'train/1_mild/Mild_DR_101.png', 'train/1_mild/Mild_DR_103.png', 'train/1_mild/Mild_DR_104.png', 'train/1_mild/Mild_DR_105.png', 'train/1_mild/Mild_DR_106.png', 'train/1_mild/Mild_DR_107.png', 'train/1_mild/Mild_DR_108.png', 'train/1_mild/Mild_DR_109.png', 'train/1_mild/Mild_DR_110.png', 'train/1_mild/Mild_DR_111.png', 'train/1_mild/Mild_DR_112.png', 'train/1_mild/Mild_DR_113.png', 'train/1_mild/Mild_DR_114.png', 'train/1_mild/Mild_DR_115.png', 'train/1_mild/Mild_DR_116.png', 'train/1_mild/Mild_DR_118.png', 'train/1_mild/Mild_DR_119.png', 'train/1_mild/Mild_DR_120.png', 'train/1_mild/Mild_DR_121.png', 'train/1_mild/Mild_DR_123.png', 'train/1_mild/Mild_DR_124.png', 'train/1_mild/Mild_DR_125.png', 'train/1_mild/Mild_DR_127.png', 'train/1_mild/Mild_DR_129.png', 'train/1_mild/Mild_DR_13.png', 'train/1_mild/Mild_DR_130.png', 'train/1_mild/Mild_DR_131.png', 'train/1_mild/Mild_DR_133.png', 'train/1_mild/Mild_DR_135.png', 'train/1_mild/Mild_DR_137.png', 'train/1_mild/Mild_DR_138.png', 'train/1_mild/Mild_DR_140.png', 'train/1_mild/Mild_DR_143.png', 'train/1_mild/Mild_DR_145.png', 'train/1_mild/Mild_DR_146.png', 'train/1_mild/Mild_DR_148.png', 'train/1_mild/Mild_DR_149.png', 'train/1_mild/Mild_DR_15.png', 'train/1_mild/Mild_DR_151.png', 'train/1_mild/Mild_DR_152.png', 'train/1_mild/Mild_DR_154.png', 'train/1_mild/Mild_DR_155.png', 'train/1_mild/Mild_DR_157.png', 'train/1_mild/Mild_DR_158.png', 'train/1_mild/Mild_DR_159.png', 'train/1_mild/Mild_DR_160.png', 'train/1_mild/Mild_DR_163.png', 'train/1_mild/Mild_DR_164.png', 'train/1_mild/Mild_DR_165.png', 'train/1_mild/Mild_DR_169.png', 'train/1_mild/Mild_DR_17.png', 'train/1_mild/Mild_DR_176.png', 'train/1_mild/Mild_DR_178.png', 'train/1_mild/Mild_DR_179.png', 'train/1_mild/Mild_DR_18.png', 'train/1_mild/Mild_DR_183.png', 'train/1_mild/Mild_DR_184.png', 'train/1_mild/Mild_DR_185.png', 'train/1_mild/Mild_DR_186.png', 'train/1_mild/Mild_DR_187.png', 'train/1_mild/Mild_DR_189.png', 'train/1_mild/Mild_DR_19.png', 'train/1_mild/Mild_DR_190.png', 'train/1_mild/Mild_DR_192.png', 'train/1_mild/Mild_DR_193.png', 'train/1_mild/Mild_DR_195.png', 'train/1_mild/Mild_DR_196.png', 'train/1_mild/Mild_DR_197.png', 'train/1_mild/Mild_DR_199.png', 'train/1_mild/Mild_DR_20.png', 'train/1_mild/Mild_DR_200.png', 'train/1_mild/Mild_DR_201.png', 'train/1_mild/Mild_DR_202.png', 'train/1_mild/Mild_DR_203.png', 'train/1_mild/Mild_DR_204.png', 'train/1_mild/Mild_DR_205.png', 'train/1_mild/Mild_DR_207.png', 'train/1_mild/Mild_DR_208.png', 'train/1_mild/Mild_DR_21.png', 'train/1_mild/Mild_DR_210.png', 'train/1_mild/Mild_DR_212.png', 'train/1_mild/Mild_DR_213.png', 'train/1_mild/Mild_DR_214.png', 'train/1_mild/Mild_DR_216.png', 'train/1_mild/Mild_DR_218.png', 'train/1_mild/Mild_DR_219.png', 'train/1_mild/Mild_DR_221.png', 'train/1_mild/Mild_DR_222.png', 'train/1_mild/Mild_DR_224.png', 'train/1_mild/Mild_DR_226.png', 'train/1_mild/Mild_DR_229.png', 'train/1_mild/Mild_DR_23.png', 'train/1_mild/Mild_DR_230.png', 'train/1_mild/Mild_DR_231.png', 'train/1_mild/Mild_DR_233.png', 'train/1_mild/Mild_DR_235.png', 'train/1_mild/Mild_DR_237.png', 'train/1_mild/Mild_DR_238.png', 'train/1_mild/Mild_DR_239.png', 'train/1_mild/Mild_DR_24.png', 'train/1_mild/Mild_DR_241.png', 'train/1_mild/Mild_DR_242.png', 'train/1_mild/Mild_DR_243.png', 'train/1_mild/Mild_DR_244.png', 'train/1_mild/Mild_DR_247.png', 'train/1_mild/Mild_DR_248.png', 'train/1_mild/Mild_DR_249.png', 'train/1_mild/Mild_DR_250.png', 'train/1_mild/Mild_DR_251.png', 'train/1_mild/Mild_DR_252.png', 'train/1_mild/Mild_DR_253.png', 'train/1_mild/Mild_DR_254.png', 'train/1_mild/Mild_DR_255.png', 'train/1_mild/Mild_DR_257.png', 'train/1_mild/Mild_DR_258.png', 'train/1_mild/Mild_DR_259.png', 'train/1_mild/Mild_DR_26.png', 'train/1_mild/Mild_DR_260.png', 'train/1_mild/Mild_DR_261.png', 'train/1_mild/Mild_DR_264.png', 'train/1_mild/Mild_DR_270.png', 'train/1_mild/Mild_DR_271.png', 'train/1_mild/Mild_DR_272.png', 'train/1_mild/Mild_DR_273.png', 'train/1_mild/Mild_DR_277.png', 'train/1_mild/Mild_DR_278.png', 'train/1_mild/Mild_DR_279.png', 'train/1_mild/Mild_DR_28.png', 'train/1_mild/Mild_DR_281.png', 'train/1_mild/Mild_DR_282.png', 'train/1_mild/Mild_DR_283.png', 'train/1_mild/Mild_DR_284.png', 'train/1_mild/Mild_DR_285.png', 'train/1_mild/Mild_DR_286.png', 'train/1_mild/Mild_DR_288.png', 'train/1_mild/Mild_DR_289.png', 'train/1_mild/Mild_DR_29.png', 'train/1_mild/Mild_DR_290.png', 'train/1_mild/Mild_DR_291.png', 'train/1_mild/Mild_DR_293.png', 'train/1_mild/Mild_DR_296.png', 'train/1_mild/Mild_DR_297.png', 'train/1_mild/Mild_DR_298.png', 'train/1_mild/Mild_DR_3.png', 'train/1_mild/Mild_DR_300.png', 'train/1_mild/Mild_DR_301.png', 'train/1_mild/Mild_DR_302.png', 'train/1_mild/Mild_DR_303.png', 'train/1_mild/Mild_DR_304.png', 'train/1_mild/Mild_DR_305.png', 'train/1_mild/Mild_DR_306.png', 'train/1_mild/Mild_DR_307.png', 'train/1_mild/Mild_DR_308.png', 'train/1_mild/Mild_DR_31.png', 'train/1_mild/Mild_DR_310.png', 'train/1_mild/Mild_DR_311.png', 'train/1_mild/Mild_DR_312.png', 'train/1_mild/Mild_DR_313.png', 'train/1_mild/Mild_DR_314.png', 'train/1_mild/Mild_DR_315.png', 'train/1_mild/Mild_DR_317.png', 'train/1_mild/Mild_DR_318.png', 'train/1_mild/Mild_DR_319.png', 'train/1_mild/Mild_DR_32.png', 'train/1_mild/Mild_DR_320.png', 'train/1_mild/Mild_DR_321.png', 'train/1_mild/Mild_DR_324.png', 'train/1_mild/Mild_DR_325.png', 'train/1_mild/Mild_DR_326.png', 'train/1_mild/Mild_DR_327.png', 'train/1_mild/Mild_DR_328.png', 'train/1_mild/Mild_DR_329.png', 'train/1_mild/Mild_DR_33.png', 'train/1_mild/Mild_DR_330.png', 'train/1_mild/Mild_DR_331.png', 'train/1_mild/Mild_DR_332.png', 'train/1_mild/Mild_DR_333.png', 'train/1_mild/Mild_DR_335.png', 'train/1_mild/Mild_DR_336.png', 'train/1_mild/Mild_DR_337.png', 'train/1_mild/Mild_DR_338.png', 'train/1_mild/Mild_DR_339.png', 'train/1_mild/Mild_DR_34.png', 'train/1_mild/Mild_DR_340.png', 'train/1_mild/Mild_DR_342.png', 'train/1_mild/Mild_DR_343.png', 'train/1_mild/Mild_DR_344.png', 'train/1_mild/Mild_DR_346.png', 'train/1_mild/Mild_DR_349.png', 'train/1_mild/Mild_DR_350.png', 'train/1_mild/Mild_DR_351.png', 'train/1_mild/Mild_DR_352.png', 'train/1_mild/Mild_DR_353.png', 'train/1_mild/Mild_DR_354.png', 'train/1_mild/Mild_DR_355.png', 'train/1_mild/Mild_DR_356.png', 'train/1_mild/Mild_DR_358.png', 'train/1_mild/Mild_DR_359.png', 'train/1_mild/Mild_DR_360.png', 'train/1_mild/Mild_DR_361.png', 'train/1_mild/Mild_DR_362.png', 'train/1_mild/Mild_DR_363.png', 'train/1_mild/Mild_DR_365.png', 'train/1_mild/Mild_DR_366.png', 'train/1_mild/Mild_DR_367.png', 'train/1_mild/Mild_DR_370.png', 'train/1_mild/Mild_DR_4.png', 'train/1_mild/Mild_DR_40.png', 'train/1_mild/Mild_DR_41.png', 'train/1_mild/Mild_DR_42.png', 'train/1_mild/Mild_DR_43.png', 'train/1_mild/Mild_DR_45.png', 'train/1_mild/Mild_DR_46.png', 'train/1_mild/Mild_DR_47.png', 'train/1_mild/Mild_DR_48.png', 'train/1_mild/Mild_DR_5.png', 'train/1_mild/Mild_DR_50.png', 'train/1_mild/Mild_DR_51.png', 'train/1_mild/Mild_DR_52.png', 'train/1_mild/Mild_DR_53.png', 'train/1_mild/Mild_DR_54.png', 'train/1_mild/Mild_DR_55.png', 'train/1_mild/Mild_DR_57.png', 'train/1_mild/Mild_DR_60.png', 'train/1_mild/Mild_DR_61.png', 'train/1_mild/Mild_DR_63.png', 'train/1_mild/Mild_DR_64.png', 'train/1_mild/Mild_DR_66.png', 'train/1_mild/Mild_DR_67.png', 'train/1_mild/Mild_DR_7.png', 'train/1_mild/Mild_DR_70.png', 'train/1_mild/Mild_DR_72.png', 'train/1_mild/Mild_DR_73.png', 'train/1_mild/Mild_DR_75.png', 'train/1_mild/Mild_DR_76.png', 'train/1_mild/Mild_DR_77.png', 'train/1_mild/Mild_DR_79.png', 'train/1_mild/Mild_DR_8.png', 'train/1_mild/Mild_DR_80.png', 'train/1_mild/Mild_DR_81.png', 'train/1_mild/Mild_DR_82.png', 'train/1_mild/Mild_DR_83.png', 'train/1_mild/Mild_DR_85.png', 'train/1_mild/Mild_DR_86.png', 'train/1_mild/Mild_DR_87.png', 'train/1_mild/Mild_DR_88.png', 'train/1_mild/Mild_DR_89.png', 'train/1_mild/Mild_DR_9.png', 'train/1_mild/Mild_DR_91.png', 'train/1_mild/Mild_DR_92.png', 'train/1_mild/Mild_DR_95.png', 'train/1_mild/Mild_DR_96.png', 'train/1_mild/Mild_DR_97.png', 'train/1_mild/Mild_DR_98.png', 'train/1_mild/Mild_DR_99.png', 'train/2_moderate/Moderate_DR.png', 'train/2_moderate/Moderate_DR_101.png', 'train/2_moderate/Moderate_DR_102.png', 'train/2_moderate/Moderate_DR_104.png', 'train/2_moderate/Moderate_DR_105.png', 'train/2_moderate/Moderate_DR_109.png', 'train/2_moderate/Moderate_DR_11.png', 'train/2_moderate/Moderate_DR_110.png', 'train/2_moderate/Moderate_DR_111.png', 'train/2_moderate/Moderate_DR_112.png', 'train/2_moderate/Moderate_DR_113.png', 'train/2_moderate/Moderate_DR_114.png', 'train/2_moderate/Moderate_DR_115.png', 'train/2_moderate/Moderate_DR_116.png', 'train/2_moderate/Moderate_DR_117.png', 'train/2_moderate/Moderate_DR_118.png', 'train/2_moderate/Moderate_DR_119.png', 'train/2_moderate/Moderate_DR_12.png', 'train/2_moderate/Moderate_DR_121.png', 'train/2_moderate/Moderate_DR_122.png', 'train/2_moderate/Moderate_DR_123.png', 'train/2_moderate/Moderate_DR_126.png', 'train/2_moderate/Moderate_DR_127.png', 'train/2_moderate/Moderate_DR_128.png', 'train/2_moderate/Moderate_DR_129.png', 'train/2_moderate/Moderate_DR_130.png', 'train/2_moderate/Moderate_DR_131.png', 'train/2_moderate/Moderate_DR_132.png', 'train/2_moderate/Moderate_DR_133.png', 'train/2_moderate/Moderate_DR_135.png', 'train/2_moderate/Moderate_DR_136.png', 'train/2_moderate/Moderate_DR_137.png', 'train/2_moderate/Moderate_DR_139.png', 'train/2_moderate/Moderate_DR_140.png', 'train/2_moderate/Moderate_DR_144.png', 'train/2_moderate/Moderate_DR_145.png', 'train/2_moderate/Moderate_DR_146.png', 'train/2_moderate/Moderate_DR_147.png', 'train/2_moderate/Moderate_DR_149.png', 'train/2_moderate/Moderate_DR_15.png', 'train/2_moderate/Moderate_DR_150.png', 'train/2_moderate/Moderate_DR_152.png', 'train/2_moderate/Moderate_DR_153.png', 'train/2_moderate/Moderate_DR_154.png', 'train/2_moderate/Moderate_DR_156.png', 'train/2_moderate/Moderate_DR_157.png', 'train/2_moderate/Moderate_DR_159.png', 'train/2_moderate/Moderate_DR_16.png', 'train/2_moderate/Moderate_DR_160.png', 'train/2_moderate/Moderate_DR_161.png', 'train/2_moderate/Moderate_DR_163.png', 'train/2_moderate/Moderate_DR_164.png', 'train/2_moderate/Moderate_DR_166.png', 'train/2_moderate/Moderate_DR_167.png', 'train/2_moderate/Moderate_DR_169.png', 'train/2_moderate/Moderate_DR_17.png', 'train/2_moderate/Moderate_DR_172.png', 'train/2_moderate/Moderate_DR_173.png', 'train/2_moderate/Moderate_DR_174.png', 'train/2_moderate/Moderate_DR_175.png', 'train/2_moderate/Moderate_DR_177.png', 'train/2_moderate/Moderate_DR_178.png', 'train/2_moderate/Moderate_DR_179.png', 'train/2_moderate/Moderate_DR_18.png', 'train/2_moderate/Moderate_DR_180.png', 'train/2_moderate/Moderate_DR_181.png', 'train/2_moderate/Moderate_DR_185.png', 'train/2_moderate/Moderate_DR_187.png', 'train/2_moderate/Moderate_DR_188.png', 'train/2_moderate/Moderate_DR_19.png', 'train/2_moderate/Moderate_DR_191.png', 'train/2_moderate/Moderate_DR_192.png', 'train/2_moderate/Moderate_DR_193.png', 'train/2_moderate/Moderate_DR_194.png', 'train/2_moderate/Moderate_DR_195.png', 'train/2_moderate/Moderate_DR_196.png', 'train/2_moderate/Moderate_DR_199.png', 'train/2_moderate/Moderate_DR_2.png', 'train/2_moderate/Moderate_DR_20.png', 'train/2_moderate/Moderate_DR_200.png', 'train/2_moderate/Moderate_DR_202.png', 'train/2_moderate/Moderate_DR_204.png', 'train/2_moderate/Moderate_DR_205.png', 'train/2_moderate/Moderate_DR_207.png', 'train/2_moderate/Moderate_DR_208.png', 'train/2_moderate/Moderate_DR_209.png', 'train/2_moderate/Moderate_DR_21.png', 'train/2_moderate/Moderate_DR_210.png', 'train/2_moderate/Moderate_DR_211.png', 'train/2_moderate/Moderate_DR_212.png', 'train/2_moderate/Moderate_DR_213.png', 'train/2_moderate/Moderate_DR_215.png', 'train/2_moderate/Moderate_DR_216.png', 'train/2_moderate/Moderate_DR_218.png', 'train/2_moderate/Moderate_DR_22.png', 'train/2_moderate/Moderate_DR_220.png', 'train/2_moderate/Moderate_DR_221.png', 'train/2_moderate/Moderate_DR_223.png', 'train/2_moderate/Moderate_DR_225.png', 'train/2_moderate/Moderate_DR_226.png', 'train/2_moderate/Moderate_DR_228.png', 'train/2_moderate/Moderate_DR_229.png', 'train/2_moderate/Moderate_DR_23.png', 'train/2_moderate/Moderate_DR_231.png', 'train/2_moderate/Moderate_DR_233.png', 'train/2_moderate/Moderate_DR_234.png', 'train/2_moderate/Moderate_DR_235.png', 'train/2_moderate/Moderate_DR_236.png', 'train/2_moderate/Moderate_DR_237.png', 'train/2_moderate/Moderate_DR_238.png', 'train/2_moderate/Moderate_DR_24.png', 'train/2_moderate/Moderate_DR_243.png', 'train/2_moderate/Moderate_DR_245.png', 'train/2_moderate/Moderate_DR_246.png', 'train/2_moderate/Moderate_DR_247.png', 'train/2_moderate/Moderate_DR_25.png', 'train/2_moderate/Moderate_DR_253.png', 'train/2_moderate/Moderate_DR_254.png', 'train/2_moderate/Moderate_DR_255.png', 'train/2_moderate/Moderate_DR_256.png', 'train/2_moderate/Moderate_DR_257.png', 'train/2_moderate/Moderate_DR_258.png', 'train/2_moderate/Moderate_DR_259.png', 'train/2_moderate/Moderate_DR_260.png', 'train/2_moderate/Moderate_DR_262.png', 'train/2_moderate/Moderate_DR_263.png', 'train/2_moderate/Moderate_DR_266.png', 'train/2_moderate/Moderate_DR_267.png', 'train/2_moderate/Moderate_DR_268.png', 'train/2_moderate/Moderate_DR_269.png', 'train/2_moderate/Moderate_DR_27.png', 'train/2_moderate/Moderate_DR_270.png', 'train/2_moderate/Moderate_DR_271.png', 'train/2_moderate/Moderate_DR_272.png', 'train/2_moderate/Moderate_DR_273.png', 'train/2_moderate/Moderate_DR_277.png', 'train/2_moderate/Moderate_DR_278.png', 'train/2_moderate/Moderate_DR_28.png', 'train/2_moderate/Moderate_DR_280.png', 'train/2_moderate/Moderate_DR_281.png', 'train/2_moderate/Moderate_DR_283.png', 'train/2_moderate/Moderate_DR_284.png', 'train/2_moderate/Moderate_DR_285.png', 'train/2_moderate/Moderate_DR_286.png', 'train/2_moderate/Moderate_DR_289.png', 'train/2_moderate/Moderate_DR_29.png', 'train/2_moderate/Moderate_DR_290.png', 'train/2_moderate/Moderate_DR_291.png', 'train/2_moderate/Moderate_DR_294.png', 'train/2_moderate/Moderate_DR_295.png', 'train/2_moderate/Moderate_DR_296.png', 'train/2_moderate/Moderate_DR_298.png', 'train/2_moderate/Moderate_DR_3.png', 'train/2_moderate/Moderate_DR_30.png', 'train/2_moderate/Moderate_DR_301.png', 'train/2_moderate/Moderate_DR_302.png', 'train/2_moderate/Moderate_DR_304.png', 'train/2_moderate/Moderate_DR_305.png', 'train/2_moderate/Moderate_DR_306.png', 'train/2_moderate/Moderate_DR_307.png', 'train/2_moderate/Moderate_DR_308.png', 'train/2_moderate/Moderate_DR_309.png', 'train/2_moderate/Moderate_DR_31.png', 'train/2_moderate/Moderate_DR_310.png', 'train/2_moderate/Moderate_DR_311.png', 'train/2_moderate/Moderate_DR_312.png', 'train/2_moderate/Moderate_DR_314.png', 'train/2_moderate/Moderate_DR_317.png', 'train/2_moderate/Moderate_DR_318.png', 'train/2_moderate/Moderate_DR_319.png', 'train/2_moderate/Moderate_DR_320.png', 'train/2_moderate/Moderate_DR_323.png', 'train/2_moderate/Moderate_DR_324.png', 'train/2_moderate/Moderate_DR_327.png', 'train/2_moderate/Moderate_DR_328.png', 'train/2_moderate/Moderate_DR_329.png', 'train/2_moderate/Moderate_DR_33.png', 'train/2_moderate/Moderate_DR_331.png', 'train/2_moderate/Moderate_DR_332.png', 'train/2_moderate/Moderate_DR_334.png', 'train/2_moderate/Moderate_DR_337.png', 'train/2_moderate/Moderate_DR_338.png', 'train/2_moderate/Moderate_DR_34.png', 'train/2_moderate/Moderate_DR_341.png', 'train/2_moderate/Moderate_DR_342.png', 'train/2_moderate/Moderate_DR_343.png', 'train/2_moderate/Moderate_DR_346.png', 'train/2_moderate/Moderate_DR_347.png', 'train/2_moderate/Moderate_DR_348.png', 'train/2_moderate/Moderate_DR_349.png', 'train/2_moderate/Moderate_DR_35.png', 'train/2_moderate/Moderate_DR_350.png', 'train/2_moderate/Moderate_DR_352.png', 'train/2_moderate/Moderate_DR_353.png', 'train/2_moderate/Moderate_DR_354.png', 'train/2_moderate/Moderate_DR_355.png', 'train/2_moderate/Moderate_DR_357.png', 'train/2_moderate/Moderate_DR_359.png', 'train/2_moderate/Moderate_DR_360.png', 'train/2_moderate/Moderate_DR_361.png', 'train/2_moderate/Moderate_DR_362.png', 'train/2_moderate/Moderate_DR_363.png', 'train/2_moderate/Moderate_DR_365.png', 'train/2_moderate/Moderate_DR_366.png', 'train/2_moderate/Moderate_DR_367.png', 'train/2_moderate/Moderate_DR_370.png', 'train/2_moderate/Moderate_DR_371.png', 'train/2_moderate/Moderate_DR_372.png', 'train/2_moderate/Moderate_DR_374.png', 'train/2_moderate/Moderate_DR_375.png', 'train/2_moderate/Moderate_DR_376.png', 'train/2_moderate/Moderate_DR_377.png', 'train/2_moderate/Moderate_DR_378.png', 'train/2_moderate/Moderate_DR_379.png', 'train/2_moderate/Moderate_DR_38.png', 'train/2_moderate/Moderate_DR_380.png', 'train/2_moderate/Moderate_DR_381.png', 'train/2_moderate/Moderate_DR_383.png', 'train/2_moderate/Moderate_DR_384.png', 'train/2_moderate/Moderate_DR_385.png', 'train/2_moderate/Moderate_DR_386.png', 'train/2_moderate/Moderate_DR_387.png', 'train/2_moderate/Moderate_DR_388.png', 'train/2_moderate/Moderate_DR_389.png', 'train/2_moderate/Moderate_DR_39.png', 'train/2_moderate/Moderate_DR_390.png', 'train/2_moderate/Moderate_DR_391.png', 'train/2_moderate/Moderate_DR_392.png', 'train/2_moderate/Moderate_DR_393.png', 'train/2_moderate/Moderate_DR_394.png', 'train/2_moderate/Moderate_DR_395.png', 'train/2_moderate/Moderate_DR_396.png', 'train/2_moderate/Moderate_DR_397.png', 'train/2_moderate/Moderate_DR_398.png', 'train/2_moderate/Moderate_DR_4.png', 'train/2_moderate/Moderate_DR_40.png', 'train/2_moderate/Moderate_DR_400.png', 'train/2_moderate/Moderate_DR_401.png', 'train/2_moderate/Moderate_DR_402.png', 'train/2_moderate/Moderate_DR_403.png', 'train/2_moderate/Moderate_DR_404.png', 'train/2_moderate/Moderate_DR_405.png', 'train/2_moderate/Moderate_DR_407.png', 'train/2_moderate/Moderate_DR_409.png', 'train/2_moderate/Moderate_DR_41.png', 'train/2_moderate/Moderate_DR_410.png', 'train/2_moderate/Moderate_DR_412.png', 'train/2_moderate/Moderate_DR_413.png', 'train/2_moderate/Moderate_DR_414.png', 'train/2_moderate/Moderate_DR_415.png', 'train/2_moderate/Moderate_DR_417.png', 'train/2_moderate/Moderate_DR_418.png', 'train/2_moderate/Moderate_DR_419.png', 'train/2_moderate/Moderate_DR_420.png', 'train/2_moderate/Moderate_DR_421.png', 'train/2_moderate/Moderate_DR_422.png', 'train/2_moderate/Moderate_DR_426.png', 'train/2_moderate/Moderate_DR_427.png', 'train/2_moderate/Moderate_DR_429.png', 'train/2_moderate/Moderate_DR_430.png', 'train/2_moderate/Moderate_DR_431.png', 'train/2_moderate/Moderate_DR_432.png', 'train/2_moderate/Moderate_DR_433.png', 'train/2_moderate/Moderate_DR_436.png', 'train/2_moderate/Moderate_DR_437.png', 'train/2_moderate/Moderate_DR_438.png', 'train/2_moderate/Moderate_DR_439.png', 'train/2_moderate/Moderate_DR_44.png', 'train/2_moderate/Moderate_DR_440.png', 'train/2_moderate/Moderate_DR_441.png', 'train/2_moderate/Moderate_DR_442.png', 'train/2_moderate/Moderate_DR_444.png', 'train/2_moderate/Moderate_DR_445.png', 'train/2_moderate/Moderate_DR_447.png', 'train/2_moderate/Moderate_DR_448.png', 'train/2_moderate/Moderate_DR_449.png', 'train/2_moderate/Moderate_DR_45.png', 'train/2_moderate/Moderate_DR_451.png', 'train/2_moderate/Moderate_DR_452.png', 'train/2_moderate/Moderate_DR_453.png', 'train/2_moderate/Moderate_DR_454.png', 'train/2_moderate/Moderate_DR_455.png', 'train/2_moderate/Moderate_DR_456.png', 'train/2_moderate/Moderate_DR_458.png', 'train/2_moderate/Moderate_DR_460.png', 'train/2_moderate/Moderate_DR_461.png', 'train/2_moderate/Moderate_DR_462.png', 'train/2_moderate/Moderate_DR_463.png', 'train/2_moderate/Moderate_DR_465.png', 'train/2_moderate/Moderate_DR_466.png', 'train/2_moderate/Moderate_DR_468.png', 'train/2_moderate/Moderate_DR_469.png', 'train/2_moderate/Moderate_DR_47.png', 'train/2_moderate/Moderate_DR_470.png', 'train/2_moderate/Moderate_DR_471.png', 'train/2_moderate/Moderate_DR_472.png', 'train/2_moderate/Moderate_DR_473.png', 'train/2_moderate/Moderate_DR_475.png', 'train/2_moderate/Moderate_DR_476.png', 'train/2_moderate/Moderate_DR_477.png', 'train/2_moderate/Moderate_DR_478.png', 'train/2_moderate/Moderate_DR_481.png', 'train/2_moderate/Moderate_DR_482.png', 'train/2_moderate/Moderate_DR_486.png', 'train/2_moderate/Moderate_DR_487.png', 'train/2_moderate/Moderate_DR_489.png', 'train/2_moderate/Moderate_DR_490.png', 'train/2_moderate/Moderate_DR_492.png', 'train/2_moderate/Moderate_DR_493.png', 'train/2_moderate/Moderate_DR_494.png', 'train/2_moderate/Moderate_DR_495.png', 'train/2_moderate/Moderate_DR_496.png', 'train/2_moderate/Moderate_DR_497.png', 'train/2_moderate/Moderate_DR_498.png', 'train/2_moderate/Moderate_DR_5.png', 'train/2_moderate/Moderate_DR_500.png', 'train/2_moderate/Moderate_DR_501.png', 'train/2_moderate/Moderate_DR_502.png', 'train/2_moderate/Moderate_DR_504.png', 'train/2_moderate/Moderate_DR_506.png', 'train/2_moderate/Moderate_DR_508.png', 'train/2_moderate/Moderate_DR_51.png', 'train/2_moderate/Moderate_DR_510.png', 'train/2_moderate/Moderate_DR_511.png', 'train/2_moderate/Moderate_DR_512.png', 'train/2_moderate/Moderate_DR_513.png', 'train/2_moderate/Moderate_DR_514.png', 'train/2_moderate/Moderate_DR_515.png', 'train/2_moderate/Moderate_DR_516.png', 'train/2_moderate/Moderate_DR_518.png', 'train/2_moderate/Moderate_DR_52.png', 'train/2_moderate/Moderate_DR_521.png', 'train/2_moderate/Moderate_DR_522.png', 'train/2_moderate/Moderate_DR_523.png', 'train/2_moderate/Moderate_DR_524.png', 'train/2_moderate/Moderate_DR_525.png', 'train/2_moderate/Moderate_DR_526.png', 'train/2_moderate/Moderate_DR_528.png', 'train/2_moderate/Moderate_DR_529.png', 'train/2_moderate/Moderate_DR_530.png', 'train/2_moderate/Moderate_DR_532.png', 'train/2_moderate/Moderate_DR_533.png', 'train/2_moderate/Moderate_DR_535.png', 'train/2_moderate/Moderate_DR_537.png', 'train/2_moderate/Moderate_DR_54.png', 'train/2_moderate/Moderate_DR_541.png', 'train/2_moderate/Moderate_DR_542.png', 'train/2_moderate/Moderate_DR_543.png', 'train/2_moderate/Moderate_DR_544.png', 'train/2_moderate/Moderate_DR_545.png', 'train/2_moderate/Moderate_DR_548.png', 'train/2_moderate/Moderate_DR_550.png', 'train/2_moderate/Moderate_DR_552.png', 'train/2_moderate/Moderate_DR_553.png', 'train/2_moderate/Moderate_DR_555.png', 'train/2_moderate/Moderate_DR_556.png', 'train/2_moderate/Moderate_DR_558.png', 'train/2_moderate/Moderate_DR_559.png', 'train/2_moderate/Moderate_DR_56.png', 'train/2_moderate/Moderate_DR_560.png', 'train/2_moderate/Moderate_DR_561.png', 'train/2_moderate/Moderate_DR_562.png', 'train/2_moderate/Moderate_DR_563.png', 'train/2_moderate/Moderate_DR_564.png', 'train/2_moderate/Moderate_DR_565.png', 'train/2_moderate/Moderate_DR_567.png', 'train/2_moderate/Moderate_DR_568.png', 'train/2_moderate/Moderate_DR_569.png', 'train/2_moderate/Moderate_DR_57.png', 'train/2_moderate/Moderate_DR_570.png', 'train/2_moderate/Moderate_DR_571.png', 'train/2_moderate/Moderate_DR_574.png', 'train/2_moderate/Moderate_DR_575.png', 'train/2_moderate/Moderate_DR_576.png', 'train/2_moderate/Moderate_DR_577.png', 'train/2_moderate/Moderate_DR_578.png', 'train/2_moderate/Moderate_DR_58.png', 'train/2_moderate/Moderate_DR_580.png', 'train/2_moderate/Moderate_DR_581.png', 'train/2_moderate/Moderate_DR_582.png', 'train/2_moderate/Moderate_DR_583.png', 'train/2_moderate/Moderate_DR_584.png', 'train/2_moderate/Moderate_DR_585.png', 'train/2_moderate/Moderate_DR_587.png', 'train/2_moderate/Moderate_DR_588.png', 'train/2_moderate/Moderate_DR_589.png', 'train/2_moderate/Moderate_DR_59.png', 'train/2_moderate/Moderate_DR_590.png', 'train/2_moderate/Moderate_DR_591.png', 'train/2_moderate/Moderate_DR_592.png', 'train/2_moderate/Moderate_DR_593.png', 'train/2_moderate/Moderate_DR_594.png', 'train/2_moderate/Moderate_DR_595.png', 'train/2_moderate/Moderate_DR_596.png', 'train/2_moderate/Moderate_DR_598.png', 'train/2_moderate/Moderate_DR_599.png', 'train/2_moderate/Moderate_DR_6.png', 'train/2_moderate/Moderate_DR_60.png', 'train/2_moderate/Moderate_DR_600.png', 'train/2_moderate/Moderate_DR_601.png', 'train/2_moderate/Moderate_DR_603.png', 'train/2_moderate/Moderate_DR_604.png', 'train/2_moderate/Moderate_DR_605.png', 'train/2_moderate/Moderate_DR_606.png', 'train/2_moderate/Moderate_DR_607.png', 'train/2_moderate/Moderate_DR_609.png', 'train/2_moderate/Moderate_DR_61.png', 'train/2_moderate/Moderate_DR_610.png', 'train/2_moderate/Moderate_DR_611.png', 'train/2_moderate/Moderate_DR_613.png', 'train/2_moderate/Moderate_DR_615.png', 'train/2_moderate/Moderate_DR_616.png', 'train/2_moderate/Moderate_DR_617.png', 'train/2_moderate/Moderate_DR_62.png', 'train/2_moderate/Moderate_DR_620.png', 'train/2_moderate/Moderate_DR_625.png', 'train/2_moderate/Moderate_DR_626.png', 'train/2_moderate/Moderate_DR_627.png', 'train/2_moderate/Moderate_DR_63.png', 'train/2_moderate/Moderate_DR_630.png', 'train/2_moderate/Moderate_DR_631.png', 'train/2_moderate/Moderate_DR_632.png', 'train/2_moderate/Moderate_DR_633.png', 'train/2_moderate/Moderate_DR_635.png', 'train/2_moderate/Moderate_DR_636.png', 'train/2_moderate/Moderate_DR_637.png', 'train/2_moderate/Moderate_DR_639.png', 'train/2_moderate/Moderate_DR_640.png', 'train/2_moderate/Moderate_DR_641.png', 'train/2_moderate/Moderate_DR_643.png', 'train/2_moderate/Moderate_DR_644.png', 'train/2_moderate/Moderate_DR_645.png', 'train/2_moderate/Moderate_DR_649.png', 'train/2_moderate/Moderate_DR_65.png', 'train/2_moderate/Moderate_DR_650.png', 'train/2_moderate/Moderate_DR_651.png', 'train/2_moderate/Moderate_DR_652.png', 'train/2_moderate/Moderate_DR_653.png', 'train/2_moderate/Moderate_DR_654.png', 'train/2_moderate/Moderate_DR_656.png', 'train/2_moderate/Moderate_DR_657.png', 'train/2_moderate/Moderate_DR_658.png', 'train/2_moderate/Moderate_DR_659.png', 'train/2_moderate/Moderate_DR_66.png', 'train/2_moderate/Moderate_DR_660.png', 'train/2_moderate/Moderate_DR_662.png', 'train/2_moderate/Moderate_DR_664.png', 'train/2_moderate/Moderate_DR_666.png', 'train/2_moderate/Moderate_DR_667.png', 'train/2_moderate/Moderate_DR_67.png', 'train/2_moderate/Moderate_DR_670.png', 'train/2_moderate/Moderate_DR_673.png', 'train/2_moderate/Moderate_DR_674.png', 'train/2_moderate/Moderate_DR_675.png', 'train/2_moderate/Moderate_DR_676.png', 'train/2_moderate/Moderate_DR_677.png', 'train/2_moderate/Moderate_DR_678.png', 'train/2_moderate/Moderate_DR_679.png', 'train/2_moderate/Moderate_DR_68.png', 'train/2_moderate/Moderate_DR_681.png', 'train/2_moderate/Moderate_DR_682.png', 'train/2_moderate/Moderate_DR_683.png', 'train/2_moderate/Moderate_DR_684.png', 'train/2_moderate/Moderate_DR_687.png', 'train/2_moderate/Moderate_DR_69.png', 'train/2_moderate/Moderate_DR_690.png', 'train/2_moderate/Moderate_DR_691.png', 'train/2_moderate/Moderate_DR_693.png', 'train/2_moderate/Moderate_DR_694.png', 'train/2_moderate/Moderate_DR_695.png', 'train/2_moderate/Moderate_DR_697.png', 'train/2_moderate/Moderate_DR_699.png', 'train/2_moderate/Moderate_DR_7.png', 'train/2_moderate/Moderate_DR_70.png', 'train/2_moderate/Moderate_DR_700.png', 'train/2_moderate/Moderate_DR_702.png', 'train/2_moderate/Moderate_DR_703.png', 'train/2_moderate/Moderate_DR_705.png', 'train/2_moderate/Moderate_DR_71.png', 'train/2_moderate/Moderate_DR_710.png', 'train/2_moderate/Moderate_DR_711.png', 'train/2_moderate/Moderate_DR_712.png', 'train/2_moderate/Moderate_DR_714.png', 'train/2_moderate/Moderate_DR_715.png', 'train/2_moderate/Moderate_DR_716.png', 'train/2_moderate/Moderate_DR_717.png', 'train/2_moderate/Moderate_DR_718.png', 'train/2_moderate/Moderate_DR_719.png', 'train/2_moderate/Moderate_DR_722.png', 'train/2_moderate/Moderate_DR_723.png', 'train/2_moderate/Moderate_DR_725.png', 'train/2_moderate/Moderate_DR_728.png', 'train/2_moderate/Moderate_DR_729.png', 'train/2_moderate/Moderate_DR_73.png', 'train/2_moderate/Moderate_DR_730.png', 'train/2_moderate/Moderate_DR_731.png', 'train/2_moderate/Moderate_DR_732.png', 'train/2_moderate/Moderate_DR_733.png', 'train/2_moderate/Moderate_DR_734.png', 'train/2_moderate/Moderate_DR_739.png', 'train/2_moderate/Moderate_DR_742.png', 'train/2_moderate/Moderate_DR_745.png', 'train/2_moderate/Moderate_DR_747.png', 'train/2_moderate/Moderate_DR_749.png', 'train/2_moderate/Moderate_DR_75.png', 'train/2_moderate/Moderate_DR_750.png', 'train/2_moderate/Moderate_DR_752.png', 'train/2_moderate/Moderate_DR_753.png', 'train/2_moderate/Moderate_DR_756.png', 'train/2_moderate/Moderate_DR_757.png', 'train/2_moderate/Moderate_DR_758.png', 'train/2_moderate/Moderate_DR_759.png', 'train/2_moderate/Moderate_DR_760.png', 'train/2_moderate/Moderate_DR_762.png', 'train/2_moderate/Moderate_DR_763.png', 'train/2_moderate/Moderate_DR_766.png', 'train/2_moderate/Moderate_DR_767.png', 'train/2_moderate/Moderate_DR_768.png', 'train/2_moderate/Moderate_DR_769.png', 'train/2_moderate/Moderate_DR_77.png', 'train/2_moderate/Moderate_DR_770.png', 'train/2_moderate/Moderate_DR_771.png', 'train/2_moderate/Moderate_DR_772.png', 'train/2_moderate/Moderate_DR_773.png', 'train/2_moderate/Moderate_DR_774.png', 'train/2_moderate/Moderate_DR_777.png', 'train/2_moderate/Moderate_DR_778.png', 'train/2_moderate/Moderate_DR_78.png', 'train/2_moderate/Moderate_DR_780.png', 'train/2_moderate/Moderate_DR_781.png', 'train/2_moderate/Moderate_DR_782.png', 'train/2_moderate/Moderate_DR_783.png', 'train/2_moderate/Moderate_DR_784.png', 'train/2_moderate/Moderate_DR_786.png', 'train/2_moderate/Moderate_DR_787.png', 'train/2_moderate/Moderate_DR_788.png', 'train/2_moderate/Moderate_DR_789.png', 'train/2_moderate/Moderate_DR_79.png', 'train/2_moderate/Moderate_DR_790.png', 'train/2_moderate/Moderate_DR_792.png', 'train/2_moderate/Moderate_DR_793.png', 'train/2_moderate/Moderate_DR_794.png', 'train/2_moderate/Moderate_DR_796.png', 'train/2_moderate/Moderate_DR_797.png', 'train/2_moderate/Moderate_DR_799.png', 'train/2_moderate/Moderate_DR_8.png', 'train/2_moderate/Moderate_DR_800.png', 'train/2_moderate/Moderate_DR_802.png', 'train/2_moderate/Moderate_DR_803.png', 'train/2_moderate/Moderate_DR_805.png', 'train/2_moderate/Moderate_DR_806.png', 'train/2_moderate/Moderate_DR_807.png', 'train/2_moderate/Moderate_DR_81.png', 'train/2_moderate/Moderate_DR_812.png', 'train/2_moderate/Moderate_DR_814.png', 'train/2_moderate/Moderate_DR_816.png', 'train/2_moderate/Moderate_DR_818.png', 'train/2_moderate/Moderate_DR_82.png', 'train/2_moderate/Moderate_DR_821.png', 'train/2_moderate/Moderate_DR_823.png', 'train/2_moderate/Moderate_DR_825.png', 'train/2_moderate/Moderate_DR_827.png', 'train/2_moderate/Moderate_DR_828.png', 'train/2_moderate/Moderate_DR_829.png', 'train/2_moderate/Moderate_DR_83.png', 'train/2_moderate/Moderate_DR_831.png', 'train/2_moderate/Moderate_DR_833.png', 'train/2_moderate/Moderate_DR_834.png', 'train/2_moderate/Moderate_DR_836.png', 'train/2_moderate/Moderate_DR_837.png', 'train/2_moderate/Moderate_DR_838.png', 'train/2_moderate/Moderate_DR_839.png', 'train/2_moderate/Moderate_DR_840.png', 'train/2_moderate/Moderate_DR_841.png', 'train/2_moderate/Moderate_DR_842.png', 'train/2_moderate/Moderate_DR_843.png', 'train/2_moderate/Moderate_DR_845.png', 'train/2_moderate/Moderate_DR_846.png', 'train/2_moderate/Moderate_DR_847.png', 'train/2_moderate/Moderate_DR_848.png', 'train/2_moderate/Moderate_DR_85.png', 'train/2_moderate/Moderate_DR_850.png', 'train/2_moderate/Moderate_DR_851.png', 'train/2_moderate/Moderate_DR_854.png', 'train/2_moderate/Moderate_DR_855.png', 'train/2_moderate/Moderate_DR_856.png', 'train/2_moderate/Moderate_DR_857.png', 'train/2_moderate/Moderate_DR_858.png', 'train/2_moderate/Moderate_DR_86.png', 'train/2_moderate/Moderate_DR_860.png', 'train/2_moderate/Moderate_DR_861.png', 'train/2_moderate/Moderate_DR_863.png', 'train/2_moderate/Moderate_DR_864.png', 'train/2_moderate/Moderate_DR_865.png', 'train/2_moderate/Moderate_DR_866.png', 'train/2_moderate/Moderate_DR_867.png', 'train/2_moderate/Moderate_DR_868.png', 'train/2_moderate/Moderate_DR_869.png', 'train/2_moderate/Moderate_DR_870.png', 'train/2_moderate/Moderate_DR_872.png', 'train/2_moderate/Moderate_DR_873.png', 'train/2_moderate/Moderate_DR_874.png', 'train/2_moderate/Moderate_DR_875.png', 'train/2_moderate/Moderate_DR_876.png', 'train/2_moderate/Moderate_DR_877.png', 'train/2_moderate/Moderate_DR_879.png', 'train/2_moderate/Moderate_DR_88.png', 'train/2_moderate/Moderate_DR_880.png', 'train/2_moderate/Moderate_DR_883.png', 'train/2_moderate/Moderate_DR_885.png', 'train/2_moderate/Moderate_DR_886.png', 'train/2_moderate/Moderate_DR_887.png', 'train/2_moderate/Moderate_DR_888.png', 'train/2_moderate/Moderate_DR_889.png', 'train/2_moderate/Moderate_DR_891.png', 'train/2_moderate/Moderate_DR_892.png', 'train/2_moderate/Moderate_DR_893.png', 'train/2_moderate/Moderate_DR_894.png', 'train/2_moderate/Moderate_DR_895.png', 'train/2_moderate/Moderate_DR_897.png', 'train/2_moderate/Moderate_DR_899.png', 'train/2_moderate/Moderate_DR_9.png', 'train/2_moderate/Moderate_DR_90.png', 'train/2_moderate/Moderate_DR_900.png', 'train/2_moderate/Moderate_DR_91.png', 'train/2_moderate/Moderate_DR_92.png', 'train/2_moderate/Moderate_DR_94.png', 'train/2_moderate/Moderate_DR_95.png', 'train/2_moderate/Moderate_DR_97.png', 'train/2_moderate/Moderate_DR_98.png', 'train/3_severe/Severe DR_10.png', 'train/3_severe/Severe DR_100.png', 'train/3_severe/Severe DR_101.png', 'train/3_severe/Severe DR_102.png', 'train/3_severe/Severe DR_103.png', 'train/3_severe/Severe DR_105.png', 'train/3_severe/Severe DR_106.png', 'train/3_severe/Severe DR_107.png', 'train/3_severe/Severe DR_108.png', 'train/3_severe/Severe DR_11.png', 'train/3_severe/Severe DR_110.png', 'train/3_severe/Severe DR_111.png', 'train/3_severe/Severe DR_112.png', 'train/3_severe/Severe DR_113.png', 'train/3_severe/Severe DR_114.png', 'train/3_severe/Severe DR_115.png', 'train/3_severe/Severe DR_116.png', 'train/3_severe/Severe DR_118.png', 'train/3_severe/Severe DR_119.png', 'train/3_severe/Severe DR_12.png', 'train/3_severe/Severe DR_122.png', 'train/3_severe/Severe DR_125.png', 'train/3_severe/Severe DR_126.png', 'train/3_severe/Severe DR_127.png', 'train/3_severe/Severe DR_128.png', 'train/3_severe/Severe DR_129.png', 'train/3_severe/Severe DR_131.png', 'train/3_severe/Severe DR_132.png', 'train/3_severe/Severe DR_134.png', 'train/3_severe/Severe DR_135.png', 'train/3_severe/Severe DR_136.png', 'train/3_severe/Severe DR_137.png', 'train/3_severe/Severe DR_138.png', 'train/3_severe/Severe DR_140.png', 'train/3_severe/Severe DR_142.png', 'train/3_severe/Severe DR_143.png', 'train/3_severe/Severe DR_145.png', 'train/3_severe/Severe DR_147.png', 'train/3_severe/Severe DR_148.png', 'train/3_severe/Severe DR_149.png', 'train/3_severe/Severe DR_150.png', 'train/3_severe/Severe DR_151.png', 'train/3_severe/Severe DR_152.png', 'train/3_severe/Severe DR_153.png', 'train/3_severe/Severe DR_154.png', 'train/3_severe/Severe DR_155.png', 'train/3_severe/Severe DR_156.png', 'train/3_severe/Severe DR_157.png', 'train/3_severe/Severe DR_16.png', 'train/3_severe/Severe DR_163.png', 'train/3_severe/Severe DR_165.png', 'train/3_severe/Severe DR_166.png', 'train/3_severe/Severe DR_168.png', 'train/3_severe/Severe DR_169.png', 'train/3_severe/Severe DR_17.png', 'train/3_severe/Severe DR_170.png', 'train/3_severe/Severe DR_172.png', 'train/3_severe/Severe DR_173.png', 'train/3_severe/Severe DR_174.png', 'train/3_severe/Severe DR_175.png', 'train/3_severe/Severe DR_176.png', 'train/3_severe/Severe DR_177.png', 'train/3_severe/Severe DR_178.png', 'train/3_severe/Severe DR_179.png', 'train/3_severe/Severe DR_18.png', 'train/3_severe/Severe DR_180.png', 'train/3_severe/Severe DR_183.png', 'train/3_severe/Severe DR_184.png', 'train/3_severe/Severe DR_185.png', 'train/3_severe/Severe DR_186.png', 'train/3_severe/Severe DR_189.png', 'train/3_severe/Severe DR_190.png', 'train/3_severe/Severe DR_20.png', 'train/3_severe/Severe DR_21.png', 'train/3_severe/Severe DR_22.png', 'train/3_severe/Severe DR_24.png', 'train/3_severe/Severe DR_26.png', 'train/3_severe/Severe DR_27.png', 'train/3_severe/Severe DR_28.png', 'train/3_severe/Severe DR_3.png', 'train/3_severe/Severe DR_30.png', 'train/3_severe/Severe DR_31.png', 'train/3_severe/Severe DR_32.png', 'train/3_severe/Severe DR_33.png', 'train/3_severe/Severe DR_35.png', 'train/3_severe/Severe DR_36.png', 'train/3_severe/Severe DR_37.png', 'train/3_severe/Severe DR_4.png', 'train/3_severe/Severe DR_40.png', 'train/3_severe/Severe DR_41.png', 'train/3_severe/Severe DR_42.png', 'train/3_severe/Severe DR_44.png', 'train/3_severe/Severe DR_45.png', 'train/3_severe/Severe DR_46.png', 'train/3_severe/Severe DR_48.png', 'train/3_severe/Severe DR_5.png', 'train/3_severe/Severe DR_50.png', 'train/3_severe/Severe DR_51.png', 'train/3_severe/Severe DR_52.png', 'train/3_severe/Severe DR_53.png', 'train/3_severe/Severe DR_54.png', 'train/3_severe/Severe DR_55.png', 'train/3_severe/Severe DR_56.png', 'train/3_severe/Severe DR_57.png', 'train/3_severe/Severe DR_59.png', 'train/3_severe/Severe DR_6.png', 'train/3_severe/Severe DR_62.png', 'train/3_severe/Severe DR_63.png', 'train/3_severe/Severe DR_64.png', 'train/3_severe/Severe DR_65.png', 'train/3_severe/Severe DR_67.png', 'train/3_severe/Severe DR_68.png', 'train/3_severe/Severe DR_69.png', 'train/3_severe/Severe DR_7.png', 'train/3_severe/Severe DR_70.png', 'train/3_severe/Severe DR_71.png', 'train/3_severe/Severe DR_74.png', 'train/3_severe/Severe DR_75.png', 'train/3_severe/Severe DR_76.png', 'train/3_severe/Severe DR_78.png', 'train/3_severe/Severe DR_79.png', 'train/3_severe/Severe DR_8.png', 'train/3_severe/Severe DR_80.png', 'train/3_severe/Severe DR_81.png', 'train/3_severe/Severe DR_83.png', 'train/3_severe/Severe DR_84.png', 'train/3_severe/Severe DR_86.png', 'train/3_severe/Severe DR_87.png', 'train/3_severe/Severe DR_88.png', 'train/3_severe/Severe DR_94.png', 'train/3_severe/Severe DR_95.png', 'train/3_severe/Severe DR_96.png', 'train/3_severe/Severe DR_98.png', 'train/3_severe/Severe DR_99.png', 'train/4_proliferate/Proliferate DR_100.png', 'train/4_proliferate/Proliferate DR_101.png', 'train/4_proliferate/Proliferate DR_102.png', 'train/4_proliferate/Proliferate DR_103.png', 'train/4_proliferate/Proliferate DR_104.png', 'train/4_proliferate/Proliferate DR_105.png', 'train/4_proliferate/Proliferate DR_107.png', 'train/4_proliferate/Proliferate DR_108.png', 'train/4_proliferate/Proliferate DR_11.png', 'train/4_proliferate/Proliferate DR_110.png', 'train/4_proliferate/Proliferate DR_111.png', 'train/4_proliferate/Proliferate DR_112.png', 'train/4_proliferate/Proliferate DR_113.png', 'train/4_proliferate/Proliferate DR_114.png', 'train/4_proliferate/Proliferate DR_115.png', 'train/4_proliferate/Proliferate DR_116.png', 'train/4_proliferate/Proliferate DR_117.png', 'train/4_proliferate/Proliferate DR_118.png', 'train/4_proliferate/Proliferate DR_120.png', 'train/4_proliferate/Proliferate DR_121.png', 'train/4_proliferate/Proliferate DR_122.png', 'train/4_proliferate/Proliferate DR_124.png', 'train/4_proliferate/Proliferate DR_127.png', 'train/4_proliferate/Proliferate DR_128.png', 'train/4_proliferate/Proliferate DR_129.png', 'train/4_proliferate/Proliferate DR_130.png', 'train/4_proliferate/Proliferate DR_131.png', 'train/4_proliferate/Proliferate DR_132.png', 'train/4_proliferate/Proliferate DR_134.png', 'train/4_proliferate/Proliferate DR_135.png', 'train/4_proliferate/Proliferate DR_136.png', 'train/4_proliferate/Proliferate DR_137.png', 'train/4_proliferate/Proliferate DR_138.png', 'train/4_proliferate/Proliferate DR_142.png', 'train/4_proliferate/Proliferate DR_143.png', 'train/4_proliferate/Proliferate DR_144.png', 'train/4_proliferate/Proliferate DR_146.png', 'train/4_proliferate/Proliferate DR_147.png', 'train/4_proliferate/Proliferate DR_148.png', 'train/4_proliferate/Proliferate DR_15.png', 'train/4_proliferate/Proliferate DR_150.png', 'train/4_proliferate/Proliferate DR_151.png', 'train/4_proliferate/Proliferate DR_152.png', 'train/4_proliferate/Proliferate DR_153.png', 'train/4_proliferate/Proliferate DR_154.png', 'train/4_proliferate/Proliferate DR_157.png', 'train/4_proliferate/Proliferate DR_158.png', 'train/4_proliferate/Proliferate DR_159.png', 'train/4_proliferate/Proliferate DR_16.png', 'train/4_proliferate/Proliferate DR_160.png', 'train/4_proliferate/Proliferate DR_162.png', 'train/4_proliferate/Proliferate DR_163.png', 'train/4_proliferate/Proliferate DR_165.png', 'train/4_proliferate/Proliferate DR_167.png', 'train/4_proliferate/Proliferate DR_168.png', 'train/4_proliferate/Proliferate DR_169.png', 'train/4_proliferate/Proliferate DR_17.png', 'train/4_proliferate/Proliferate DR_172.png', 'train/4_proliferate/Proliferate DR_174.png', 'train/4_proliferate/Proliferate DR_178.png', 'train/4_proliferate/Proliferate DR_179.png', 'train/4_proliferate/Proliferate DR_18.png', 'train/4_proliferate/Proliferate DR_180.png', 'train/4_proliferate/Proliferate DR_181.png', 'train/4_proliferate/Proliferate DR_184.png', 'train/4_proliferate/Proliferate DR_185.png', 'train/4_proliferate/Proliferate DR_186.png', 'train/4_proliferate/Proliferate DR_187.png', 'train/4_proliferate/Proliferate DR_188.png', 'train/4_proliferate/Proliferate DR_19.png', 'train/4_proliferate/Proliferate DR_190.png', 'train/4_proliferate/Proliferate DR_191.png', 'train/4_proliferate/Proliferate DR_192.png', 'train/4_proliferate/Proliferate DR_193.png', 'train/4_proliferate/Proliferate DR_194.png', 'train/4_proliferate/Proliferate DR_195.png', 'train/4_proliferate/Proliferate DR_196.png', 'train/4_proliferate/Proliferate DR_197.png', 'train/4_proliferate/Proliferate DR_198.png', 'train/4_proliferate/Proliferate DR_199.png', 'train/4_proliferate/Proliferate DR_2.png', 'train/4_proliferate/Proliferate DR_20.png', 'train/4_proliferate/Proliferate DR_200.png', 'train/4_proliferate/Proliferate DR_202.png', 'train/4_proliferate/Proliferate DR_203.png', 'train/4_proliferate/Proliferate DR_206.png', 'train/4_proliferate/Proliferate DR_207.png', 'train/4_proliferate/Proliferate DR_208.png', 'train/4_proliferate/Proliferate DR_21.png', 'train/4_proliferate/Proliferate DR_211.png', 'train/4_proliferate/Proliferate DR_212.png', 'train/4_proliferate/Proliferate DR_213.png', 'train/4_proliferate/Proliferate DR_214.png', 'train/4_proliferate/Proliferate DR_215.png', 'train/4_proliferate/Proliferate DR_217.png', 'train/4_proliferate/Proliferate DR_219.png', 'train/4_proliferate/Proliferate DR_22.png', 'train/4_proliferate/Proliferate DR_220.png', 'train/4_proliferate/Proliferate DR_224.png', 'train/4_proliferate/Proliferate DR_226.png', 'train/4_proliferate/Proliferate DR_227.png', 'train/4_proliferate/Proliferate DR_228.png', 'train/4_proliferate/Proliferate DR_229.png', 'train/4_proliferate/Proliferate DR_230.png', 'train/4_proliferate/Proliferate DR_232.png', 'train/4_proliferate/Proliferate DR_233.png', 'train/4_proliferate/Proliferate DR_234.png', 'train/4_proliferate/Proliferate DR_235.png', 'train/4_proliferate/Proliferate DR_236.png', 'train/4_proliferate/Proliferate DR_237.png', 'train/4_proliferate/Proliferate DR_238.png', 'train/4_proliferate/Proliferate DR_24.png', 'train/4_proliferate/Proliferate DR_241.png', 'train/4_proliferate/Proliferate DR_243.png', 'train/4_proliferate/Proliferate DR_244.png', 'train/4_proliferate/Proliferate DR_246.png', 'train/4_proliferate/Proliferate DR_247.png', 'train/4_proliferate/Proliferate DR_248.png', 'train/4_proliferate/Proliferate DR_249.png', 'train/4_proliferate/Proliferate DR_25.png', 'train/4_proliferate/Proliferate DR_250.png', 'train/4_proliferate/Proliferate DR_251.png', 'train/4_proliferate/Proliferate DR_253.png', 'train/4_proliferate/Proliferate DR_254.png', 'train/4_proliferate/Proliferate DR_256.png', 'train/4_proliferate/Proliferate DR_259.png', 'train/4_proliferate/Proliferate DR_26.png', 'train/4_proliferate/Proliferate DR_260.png', 'train/4_proliferate/Proliferate DR_261.png', 'train/4_proliferate/Proliferate DR_263.png', 'train/4_proliferate/Proliferate DR_264.png', 'train/4_proliferate/Proliferate DR_265.png', 'train/4_proliferate/Proliferate DR_266.png', 'train/4_proliferate/Proliferate DR_267.png', 'train/4_proliferate/Proliferate DR_268.png', 'train/4_proliferate/Proliferate DR_27.png', 'train/4_proliferate/Proliferate DR_272.png', 'train/4_proliferate/Proliferate DR_274.png', 'train/4_proliferate/Proliferate DR_275.png', 'train/4_proliferate/Proliferate DR_276.png', 'train/4_proliferate/Proliferate DR_278.png', 'train/4_proliferate/Proliferate DR_279.png', 'train/4_proliferate/Proliferate DR_280.png', 'train/4_proliferate/Proliferate DR_282.png', 'train/4_proliferate/Proliferate DR_283.png', 'train/4_proliferate/Proliferate DR_284.png', 'train/4_proliferate/Proliferate DR_285.png', 'train/4_proliferate/Proliferate DR_287.png', 'train/4_proliferate/Proliferate DR_288.png', 'train/4_proliferate/Proliferate DR_29.png', 'train/4_proliferate/Proliferate DR_290.png', 'train/4_proliferate/Proliferate DR_291.png', 'train/4_proliferate/Proliferate DR_292.png', 'train/4_proliferate/Proliferate DR_293.png', 'train/4_proliferate/Proliferate DR_294.png', 'train/4_proliferate/Proliferate DR_31.png', 'train/4_proliferate/Proliferate DR_32.png', 'train/4_proliferate/Proliferate DR_33.png', 'train/4_proliferate/Proliferate DR_35.png', 'train/4_proliferate/Proliferate DR_4.png', 'train/4_proliferate/Proliferate DR_41.png', 'train/4_proliferate/Proliferate DR_42.png', 'train/4_proliferate/Proliferate DR_44.png', 'train/4_proliferate/Proliferate DR_45.png', 'train/4_proliferate/Proliferate DR_46.png', 'train/4_proliferate/Proliferate DR_47.png', 'train/4_proliferate/Proliferate DR_5.png', 'train/4_proliferate/Proliferate DR_50.png', 'train/4_proliferate/Proliferate DR_51.png', 'train/4_proliferate/Proliferate DR_52.png', 'train/4_proliferate/Proliferate DR_53.png', 'train/4_proliferate/Proliferate DR_57.png', 'train/4_proliferate/Proliferate DR_58.png', 'train/4_proliferate/Proliferate DR_59.png', 'train/4_proliferate/Proliferate DR_60.png', 'train/4_proliferate/Proliferate DR_62.png', 'train/4_proliferate/Proliferate DR_64.png', 'train/4_proliferate/Proliferate DR_66.png', 'train/4_proliferate/Proliferate DR_67.png', 'train/4_proliferate/Proliferate DR_69.png', 'train/4_proliferate/Proliferate DR_71.png', 'train/4_proliferate/Proliferate DR_73.png', 'train/4_proliferate/Proliferate DR_74.png', 'train/4_proliferate/Proliferate DR_75.png', 'train/4_proliferate/Proliferate DR_76.png', 'train/4_proliferate/Proliferate DR_77.png', 'train/4_proliferate/Proliferate DR_8.png', 'train/4_proliferate/Proliferate DR_80.png', 'train/4_proliferate/Proliferate DR_81.png', 'train/4_proliferate/Proliferate DR_82.png', 'train/4_proliferate/Proliferate DR_85.png', 'train/4_proliferate/Proliferate DR_86.png', 'train/4_proliferate/Proliferate DR_87.png', 'train/4_proliferate/Proliferate DR_88.png', 'train/4_proliferate/Proliferate DR_89.png', 'train/4_proliferate/Proliferate DR_91.png', 'train/4_proliferate/Proliferate DR_92.png', 'train/4_proliferate/Proliferate DR_93.png', 'train/4_proliferate/Proliferate DR_95.png', 'train/4_proliferate/Proliferate DR_97.png', 'train/4_proliferate/Proliferate DR_98.png', 'train/4_proliferate/Proliferate DR_99.png', 'val/0_healthy/Healthy.png', 'val/0_healthy/Healthy_103.png', 'val/0_healthy/Healthy_106.png', 'val/0_healthy/Healthy_108.png', 'val/0_healthy/Healthy_117.png', 'val/0_healthy/Healthy_123.png', 'val/0_healthy/Healthy_124.png', 'val/0_healthy/Healthy_125.png', 'val/0_healthy/Healthy_13.png', 'val/0_healthy/Healthy_137.png', 'val/0_healthy/Healthy_158.png', 'val/0_healthy/Healthy_162.png', 'val/0_healthy/Healthy_168.png', 'val/0_healthy/Healthy_176.png', 'val/0_healthy/Healthy_178.png', 'val/0_healthy/Healthy_180.png', 'val/0_healthy/Healthy_181.png', 'val/0_healthy/Healthy_19.png', 'val/0_healthy/Healthy_195.png', 'val/0_healthy/Healthy_201.png', 'val/0_healthy/Healthy_205.png', 'val/0_healthy/Healthy_206.png', 'val/0_healthy/Healthy_211.png', 'val/0_healthy/Healthy_214.png', 'val/0_healthy/Healthy_215.png', 'val/0_healthy/Healthy_23.png', 'val/0_healthy/Healthy_237.png', 'val/0_healthy/Healthy_239.png', 'val/0_healthy/Healthy_250.png', 'val/0_healthy/Healthy_265.png', 'val/0_healthy/Healthy_272.png', 'val/0_healthy/Healthy_276.png', 'val/0_healthy/Healthy_28.png', 'val/0_healthy/Healthy_281.png', 'val/0_healthy/Healthy_284.png', 'val/0_healthy/Healthy_295.png', 'val/0_healthy/Healthy_30.png', 'val/0_healthy/Healthy_306.png', 'val/0_healthy/Healthy_310.png', 'val/0_healthy/Healthy_315.png', 'val/0_healthy/Healthy_317.png', 'val/0_healthy/Healthy_319.png', 'val/0_healthy/Healthy_326.png', 'val/0_healthy/Healthy_331.png', 'val/0_healthy/Healthy_34.png', 'val/0_healthy/Healthy_344.png', 'val/0_healthy/Healthy_345.png', 'val/0_healthy/Healthy_349.png', 'val/0_healthy/Healthy_351.png', 'val/0_healthy/Healthy_366.png', 'val/0_healthy/Healthy_372.png', 'val/0_healthy/Healthy_375.png', 'val/0_healthy/Healthy_382.png', 'val/0_healthy/Healthy_386.png', 'val/0_healthy/Healthy_388.png', 'val/0_healthy/Healthy_394.png', 'val/0_healthy/Healthy_397.png', 'val/0_healthy/Healthy_404.png', 'val/0_healthy/Healthy_413.png', 'val/0_healthy/Healthy_415.png', 'val/0_healthy/Healthy_419.png', 'val/0_healthy/Healthy_422.png', 'val/0_healthy/Healthy_425.png', 'val/0_healthy/Healthy_429.png', 'val/0_healthy/Healthy_43.png', 'val/0_healthy/Healthy_434.png', 'val/0_healthy/Healthy_447.png', 'val/0_healthy/Healthy_448.png', 'val/0_healthy/Healthy_453.png', 'val/0_healthy/Healthy_454.png', 'val/0_healthy/Healthy_467.png', 'val/0_healthy/Healthy_474.png', 'val/0_healthy/Healthy_480.png', 'val/0_healthy/Healthy_485.png', 'val/0_healthy/Healthy_489.png', 'val/0_healthy/Healthy_5.png', 'val/0_healthy/Healthy_501.png', 'val/0_healthy/Healthy_508.png', 'val/0_healthy/Healthy_516.png', 'val/0_healthy/Healthy_53.png', 'val/0_healthy/Healthy_55.png', 'val/0_healthy/Healthy_559.png', 'val/0_healthy/Healthy_56.png', 'val/0_healthy/Healthy_573.png', 'val/0_healthy/Healthy_578.png', 'val/0_healthy/Healthy_587.png', 'val/0_healthy/Healthy_589.png', 'val/0_healthy/Healthy_594.png', 'val/0_healthy/Healthy_596.png', 'val/0_healthy/Healthy_604.png', 'val/0_healthy/Healthy_609.png', 'val/0_healthy/Healthy_611.png', 'val/0_healthy/Healthy_621.png', 'val/0_healthy/Healthy_624.png', 'val/0_healthy/Healthy_628.png', 'val/0_healthy/Healthy_637.png', 'val/0_healthy/Healthy_65.png', 'val/0_healthy/Healthy_651.png', 'val/0_healthy/Healthy_660.png', 'val/0_healthy/Healthy_666.png', 'val/0_healthy/Healthy_667.png', 'val/0_healthy/Healthy_68.png', 'val/0_healthy/Healthy_680.png', 'val/0_healthy/Healthy_690.png', 'val/0_healthy/Healthy_704.png', 'val/0_healthy/Healthy_705.png', 'val/0_healthy/Healthy_708.png', 'val/0_healthy/Healthy_709.png', 'val/0_healthy/Healthy_722.png', 'val/0_healthy/Healthy_726.png', 'val/0_healthy/Healthy_74.png', 'val/0_healthy/Healthy_744.png', 'val/0_healthy/Healthy_750.png', 'val/0_healthy/Healthy_770.png', 'val/0_healthy/Healthy_785.png', 'val/0_healthy/Healthy_79.png', 'val/0_healthy/Healthy_790.png', 'val/0_healthy/Healthy_798.png', 'val/0_healthy/Healthy_803.png', 'val/0_healthy/Healthy_812.png', 'val/0_healthy/Healthy_818.png', 'val/0_healthy/Healthy_823.png', 'val/0_healthy/Healthy_826.png', 'val/0_healthy/Healthy_830.png', 'val/0_healthy/Healthy_831.png', 'val/0_healthy/Healthy_832.png', 'val/0_healthy/Healthy_835.png', 'val/0_healthy/Healthy_846.png', 'val/0_healthy/Healthy_851.png', 'val/0_healthy/Healthy_863.png', 'val/0_healthy/Healthy_867.png', 'val/0_healthy/Healthy_88.png', 'val/0_healthy/Healthy_892.png', 'val/0_healthy/Healthy_894.png', 'val/0_healthy/Healthy_898.png', 'val/0_healthy/Healthy_899.png', 'val/0_healthy/Healthy_900.png', 'val/0_healthy/Healthy_901.png', 'val/0_healthy/Healthy_905.png', 'val/0_healthy/Healthy_910.png', 'val/0_healthy/Healthy_917.png', 'val/0_healthy/Healthy_919.png', 'val/0_healthy/Healthy_940.png', 'val/0_healthy/Healthy_942.png', 'val/0_healthy/Healthy_945.png', 'val/0_healthy/Healthy_949.png', 'val/0_healthy/Healthy_954.png', 'val/0_healthy/Healthy_963.png', 'val/0_healthy/Healthy_966.png', 'val/0_healthy/Healthy_991.png', 'val/1_mild/Mild_DR_11.png', 'val/1_mild/Mild_DR_117.png', 'val/1_mild/Mild_DR_128.png', 'val/1_mild/Mild_DR_132.png', 'val/1_mild/Mild_DR_134.png', 'val/1_mild/Mild_DR_139.png', 'val/1_mild/Mild_DR_14.png', 'val/1_mild/Mild_DR_141.png', 'val/1_mild/Mild_DR_144.png', 'val/1_mild/Mild_DR_147.png', 'val/1_mild/Mild_DR_150.png', 'val/1_mild/Mild_DR_161.png', 'val/1_mild/Mild_DR_162.png', 'val/1_mild/Mild_DR_166.png', 'val/1_mild/Mild_DR_168.png', 'val/1_mild/Mild_DR_170.png', 'val/1_mild/Mild_DR_173.png', 'val/1_mild/Mild_DR_177.png', 'val/1_mild/Mild_DR_181.png', 'val/1_mild/Mild_DR_182.png', 'val/1_mild/Mild_DR_191.png', 'val/1_mild/Mild_DR_198.png', 'val/1_mild/Mild_DR_215.png', 'val/1_mild/Mild_DR_22.png', 'val/1_mild/Mild_DR_223.png', 'val/1_mild/Mild_DR_225.png', 'val/1_mild/Mild_DR_227.png', 'val/1_mild/Mild_DR_234.png', 'val/1_mild/Mild_DR_236.png', 'val/1_mild/Mild_DR_245.png', 'val/1_mild/Mild_DR_25.png', 'val/1_mild/Mild_DR_263.png', 'val/1_mild/Mild_DR_265.png', 'val/1_mild/Mild_DR_267.png', 'val/1_mild/Mild_DR_269.png', 'val/1_mild/Mild_DR_295.png', 'val/1_mild/Mild_DR_299.png', 'val/1_mild/Mild_DR_30.png', 'val/1_mild/Mild_DR_322.png', 'val/1_mild/Mild_DR_334.png', 'val/1_mild/Mild_DR_341.png', 'val/1_mild/Mild_DR_347.png', 'val/1_mild/Mild_DR_348.png', 'val/1_mild/Mild_DR_35.png', 'val/1_mild/Mild_DR_357.png', 'val/1_mild/Mild_DR_364.png', 'val/1_mild/Mild_DR_369.png', 'val/1_mild/Mild_DR_38.png', 'val/1_mild/Mild_DR_44.png', 'val/1_mild/Mild_DR_56.png', 'val/1_mild/Mild_DR_58.png', 'val/1_mild/Mild_DR_6.png', 'val/1_mild/Mild_DR_68.png', 'val/1_mild/Mild_DR_69.png', 'val/1_mild/Mild_DR_71.png', 'val/1_mild/Mild_DR_78.png', 'val/2_moderate/Moderate_DR_10.png', 'val/2_moderate/Moderate_DR_103.png', 'val/2_moderate/Moderate_DR_106.png', 'val/2_moderate/Moderate_DR_107.png', 'val/2_moderate/Moderate_DR_108.png', 'val/2_moderate/Moderate_DR_120.png', 'val/2_moderate/Moderate_DR_13.png', 'val/2_moderate/Moderate_DR_134.png', 'val/2_moderate/Moderate_DR_142.png', 'val/2_moderate/Moderate_DR_151.png', 'val/2_moderate/Moderate_DR_162.png', 'val/2_moderate/Moderate_DR_176.png', 'val/2_moderate/Moderate_DR_183.png', 'val/2_moderate/Moderate_DR_184.png', 'val/2_moderate/Moderate_DR_186.png', 'val/2_moderate/Moderate_DR_197.png', 'val/2_moderate/Moderate_DR_198.png', 'val/2_moderate/Moderate_DR_201.png', 'val/2_moderate/Moderate_DR_214.png', 'val/2_moderate/Moderate_DR_217.png', 'val/2_moderate/Moderate_DR_219.png', 'val/2_moderate/Moderate_DR_224.png', 'val/2_moderate/Moderate_DR_227.png', 'val/2_moderate/Moderate_DR_239.png', 'val/2_moderate/Moderate_DR_240.png', 'val/2_moderate/Moderate_DR_241.png', 'val/2_moderate/Moderate_DR_242.png', 'val/2_moderate/Moderate_DR_248.png', 'val/2_moderate/Moderate_DR_251.png', 'val/2_moderate/Moderate_DR_252.png', 'val/2_moderate/Moderate_DR_26.png', 'val/2_moderate/Moderate_DR_261.png', 'val/2_moderate/Moderate_DR_265.png', 'val/2_moderate/Moderate_DR_287.png', 'val/2_moderate/Moderate_DR_292.png', 'val/2_moderate/Moderate_DR_299.png', 'val/2_moderate/Moderate_DR_300.png', 'val/2_moderate/Moderate_DR_315.png', 'val/2_moderate/Moderate_DR_322.png', 'val/2_moderate/Moderate_DR_325.png', 'val/2_moderate/Moderate_DR_326.png', 'val/2_moderate/Moderate_DR_336.png', 'val/2_moderate/Moderate_DR_340.png', 'val/2_moderate/Moderate_DR_345.png', 'val/2_moderate/Moderate_DR_356.png', 'val/2_moderate/Moderate_DR_36.png', 'val/2_moderate/Moderate_DR_369.png', 'val/2_moderate/Moderate_DR_37.png', 'val/2_moderate/Moderate_DR_399.png', 'val/2_moderate/Moderate_DR_406.png', 'val/2_moderate/Moderate_DR_411.png', 'val/2_moderate/Moderate_DR_416.png', 'val/2_moderate/Moderate_DR_42.png', 'val/2_moderate/Moderate_DR_435.png', 'val/2_moderate/Moderate_DR_446.png', 'val/2_moderate/Moderate_DR_457.png', 'val/2_moderate/Moderate_DR_459.png', 'val/2_moderate/Moderate_DR_464.png', 'val/2_moderate/Moderate_DR_467.png', 'val/2_moderate/Moderate_DR_474.png', 'val/2_moderate/Moderate_DR_479.png', 'val/2_moderate/Moderate_DR_480.png', 'val/2_moderate/Moderate_DR_483.png', 'val/2_moderate/Moderate_DR_491.png', 'val/2_moderate/Moderate_DR_499.png', 'val/2_moderate/Moderate_DR_50.png', 'val/2_moderate/Moderate_DR_505.png', 'val/2_moderate/Moderate_DR_519.png', 'val/2_moderate/Moderate_DR_53.png', 'val/2_moderate/Moderate_DR_536.png', 'val/2_moderate/Moderate_DR_539.png', 'val/2_moderate/Moderate_DR_540.png', 'val/2_moderate/Moderate_DR_547.png', 'val/2_moderate/Moderate_DR_55.png', 'val/2_moderate/Moderate_DR_557.png', 'val/2_moderate/Moderate_DR_579.png', 'val/2_moderate/Moderate_DR_586.png', 'val/2_moderate/Moderate_DR_597.png', 'val/2_moderate/Moderate_DR_602.png', 'val/2_moderate/Moderate_DR_608.png', 'val/2_moderate/Moderate_DR_618.png', 'val/2_moderate/Moderate_DR_619.png', 'val/2_moderate/Moderate_DR_628.png', 'val/2_moderate/Moderate_DR_634.png', 'val/2_moderate/Moderate_DR_638.png', 'val/2_moderate/Moderate_DR_64.png', 'val/2_moderate/Moderate_DR_642.png', 'val/2_moderate/Moderate_DR_648.png', 'val/2_moderate/Moderate_DR_661.png', 'val/2_moderate/Moderate_DR_663.png', 'val/2_moderate/Moderate_DR_672.png', 'val/2_moderate/Moderate_DR_685.png', 'val/2_moderate/Moderate_DR_686.png', 'val/2_moderate/Moderate_DR_688.png', 'val/2_moderate/Moderate_DR_689.png', 'val/2_moderate/Moderate_DR_698.png', 'val/2_moderate/Moderate_DR_701.png', 'val/2_moderate/Moderate_DR_704.png', 'val/2_moderate/Moderate_DR_708.png', 'val/2_moderate/Moderate_DR_709.png', 'val/2_moderate/Moderate_DR_713.png', 'val/2_moderate/Moderate_DR_72.png', 'val/2_moderate/Moderate_DR_720.png', 'val/2_moderate/Moderate_DR_724.png', 'val/2_moderate/Moderate_DR_726.png', 'val/2_moderate/Moderate_DR_735.png', 'val/2_moderate/Moderate_DR_736.png', 'val/2_moderate/Moderate_DR_737.png', 'val/2_moderate/Moderate_DR_74.png', 'val/2_moderate/Moderate_DR_746.png', 'val/2_moderate/Moderate_DR_754.png', 'val/2_moderate/Moderate_DR_764.png', 'val/2_moderate/Moderate_DR_765.png', 'val/2_moderate/Moderate_DR_775.png', 'val/2_moderate/Moderate_DR_776.png', 'val/2_moderate/Moderate_DR_779.png', 'val/2_moderate/Moderate_DR_791.png', 'val/2_moderate/Moderate_DR_798.png', 'val/2_moderate/Moderate_DR_80.png', 'val/2_moderate/Moderate_DR_804.png', 'val/2_moderate/Moderate_DR_808.png', 'val/2_moderate/Moderate_DR_809.png', 'val/2_moderate/Moderate_DR_810.png', 'val/2_moderate/Moderate_DR_811.png', 'val/2_moderate/Moderate_DR_813.png', 'val/2_moderate/Moderate_DR_817.png', 'val/2_moderate/Moderate_DR_835.png', 'val/2_moderate/Moderate_DR_84.png', 'val/2_moderate/Moderate_DR_852.png', 'val/2_moderate/Moderate_DR_87.png', 'val/2_moderate/Moderate_DR_878.png', 'val/2_moderate/Moderate_DR_882.png', 'val/2_moderate/Moderate_DR_898.png', 'val/2_moderate/Moderate_DR_96.png', 'val/2_moderate/Moderate_DR_99.png', 'val/3_severe/Severe DR.png', 'val/3_severe/Severe DR_104.png', 'val/3_severe/Severe DR_109.png', 'val/3_severe/Severe DR_121.png', 'val/3_severe/Severe DR_123.png', 'val/3_severe/Severe DR_124.png', 'val/3_severe/Severe DR_14.png', 'val/3_severe/Severe DR_146.png', 'val/3_severe/Severe DR_158.png', 'val/3_severe/Severe DR_159.png', 'val/3_severe/Severe DR_160.png', 'val/3_severe/Severe DR_161.png', 'val/3_severe/Severe DR_164.png', 'val/3_severe/Severe DR_19.png', 'val/3_severe/Severe DR_2.png', 'val/3_severe/Severe DR_23.png', 'val/3_severe/Severe DR_29.png', 'val/3_severe/Severe DR_38.png', 'val/3_severe/Severe DR_49.png', 'val/3_severe/Severe DR_60.png', 'val/3_severe/Severe DR_73.png', 'val/3_severe/Severe DR_77.png', 'val/3_severe/Severe DR_82.png', 'val/3_severe/Severe DR_85.png', 'val/3_severe/Severe DR_89.png', 'val/3_severe/Severe DR_9.png', 'val/3_severe/Severe DR_90.png', 'val/3_severe/Severe DR_92.png', 'val/4_proliferate/Proliferate DR_10.png', 'val/4_proliferate/Proliferate DR_106.png', 'val/4_proliferate/Proliferate DR_109.png', 'val/4_proliferate/Proliferate DR_119.png', 'val/4_proliferate/Proliferate DR_12.png', 'val/4_proliferate/Proliferate DR_125.png', 'val/4_proliferate/Proliferate DR_126.png', 'val/4_proliferate/Proliferate DR_13.png', 'val/4_proliferate/Proliferate DR_133.png', 'val/4_proliferate/Proliferate DR_139.png', 'val/4_proliferate/Proliferate DR_145.png', 'val/4_proliferate/Proliferate DR_155.png', 'val/4_proliferate/Proliferate DR_156.png', 'val/4_proliferate/Proliferate DR_164.png', 'val/4_proliferate/Proliferate DR_170.png', 'val/4_proliferate/Proliferate DR_171.png', 'val/4_proliferate/Proliferate DR_173.png', 'val/4_proliferate/Proliferate DR_175.png', 'val/4_proliferate/Proliferate DR_182.png', 'val/4_proliferate/Proliferate DR_209.png', 'val/4_proliferate/Proliferate DR_223.png', 'val/4_proliferate/Proliferate DR_23.png', 'val/4_proliferate/Proliferate DR_239.png', 'val/4_proliferate/Proliferate DR_242.png', 'val/4_proliferate/Proliferate DR_257.png', 'val/4_proliferate/Proliferate DR_258.png', 'val/4_proliferate/Proliferate DR_262.png', 'val/4_proliferate/Proliferate DR_269.png', 'val/4_proliferate/Proliferate DR_271.png', 'val/4_proliferate/Proliferate DR_273.png', 'val/4_proliferate/Proliferate DR_277.png', 'val/4_proliferate/Proliferate DR_281.png', 'val/4_proliferate/Proliferate DR_30.png', 'val/4_proliferate/Proliferate DR_43.png', 'val/4_proliferate/Proliferate DR_48.png', 'val/4_proliferate/Proliferate DR_54.png', 'val/4_proliferate/Proliferate DR_55.png', 'val/4_proliferate/Proliferate DR_61.png', 'val/4_proliferate/Proliferate DR_70.png', 'val/4_proliferate/Proliferate DR_72.png', 'val/4_proliferate/Proliferate DR_78.png', 'val/4_proliferate/Proliferate DR_79.png', 'val/4_proliferate/Proliferate DR_83.png', 'val/4_proliferate/Proliferate DR_9.png']"
+}

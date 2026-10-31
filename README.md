@@ -102,6 +102,7 @@ backend/
   auth.py            登录与会话
 frontend/            原生 JS 单页，无构建
 docs/                API / 契约 / SOP / PRD
+experiments/         Day 0–7 实测记录与原始指标 JSON（结论见 项目实测报告.md）
 ```
 
 ## 已知问题

@@ -1,0 +1,34 @@
+_testdata/
+backend/_e2e_*.py
+backend/storage/*.zip
+
+# 预训练模型权重（首次使用时自动下载到本地缓存，体积大不入库）
+backend/_hf_models/
+
+# 数据库备份与本地缓存
+backend/_backup/
+__pycache__/
+*.pyc
+
+# 注意：下面两个目录只是不进版本控制，磁盘上**必须保留**。
+# _work_ds_<id>/ 存放该数据集解析出的实际图像文件，被 datasets.file_path
+# 与 meta.image_root 引用；删掉会导致训练时全部图像解码失败。
+backend/storage/_work_*/
+backend/storage/_upload_*/
+
+# 运行时数据：数据库、数据集存储、日志，全部本地生成
+backend/nn_studio.db
+backend/parse_memory.db
+*.db
+*.db-wal
+*.db-shm
+backend/storage/
+backend/logs/
+logs/
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+
+# 会话签名密钥（首次启动自动生成，不入库）
+backend/.secret
